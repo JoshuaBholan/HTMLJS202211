@@ -2,7 +2,7 @@ body{
     display: flex;
     justify-content: center;
 }
-#container{
+ #container{
     width: 1000px;
     border: 1px solid black;
 }
