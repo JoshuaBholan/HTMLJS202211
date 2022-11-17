@@ -43,7 +43,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You Tied!", canvas.width/2, 320);
                 ctx.fillText("You Chose Rock!", canvas.width/2, 280);
                 ctx.strokeText("You Tied!", canvas.width/2, 320);
@@ -55,7 +55,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You lost!", canvas.width/2, 320);
                 ctx.fillText("You Chose Rock!", canvas.width/2, 280);
                 ctx.strokeText("You lost!", canvas.width/2, 320);
@@ -68,7 +68,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You Won!", canvas.width/2, 320);
                 ctx.fillText("You Chose Rock!", canvas.width/2, 280);
                 ctx.strokeText("You Won!", canvas.width/2, 320);
@@ -83,7 +83,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You Win!", canvas.width/2, 320);
                 ctx.fillText("You Chose Paper!", canvas.width/2, 280);
                 ctx.strokeText("You Win!", canvas.width/2, 320);
@@ -95,7 +95,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You Tied!", canvas.width/2, 320);
                 ctx.fillText("You Chose paper!", canvas.width/2, 280);
                 ctx.strokeText("You Tied!", canvas.width/2, 320);
@@ -107,7 +107,7 @@ function play(pChoice)
                 ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You lost!", canvas.width/2, 320);
                 ctx.fillText("You Chose paper!", canvas.width/2, 280);
                 ctx.strokeText("You lost!", canvas.width/2, 320);
@@ -122,7 +122,7 @@ function play(pChoice)
                     ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You lost!", canvas.width/2, 320);
                 ctx.fillText("You Chose Scissors!", canvas.width/2, 280);
                 ctx.strokeText("You lost!", canvas.width/2, 320);
@@ -134,7 +134,7 @@ function play(pChoice)
                     ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You win!", canvas.width/2, 320);
                 ctx.fillText("You Chose scissors!", canvas.width/2, 280);
                 ctx.strokeText("You win!", canvas.width/2, 320);
@@ -146,7 +146,7 @@ function play(pChoice)
                     ctx.font = "40px Arial";
                 ctx.fillstyle = "blue";
                 ctx.strokeStyle = "green";
-                ctx.textAlign = "center"
+                ctx.textAlign = "center";
                 ctx.fillText("You tie!", canvas.width/2, 320);
                 ctx.fillText("You Chose scissors!", canvas.width/2, 280);
                 ctx.strokeText("You tie!", canvas.width/2, 320);
