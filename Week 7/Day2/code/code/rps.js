@@ -83,14 +83,15 @@ document.getElementById("paper").addEventListener('click',function(e){alert("you
 });
 document.getElementById("scissors").addEventListener('click',function(e){alert("you picked "+rps[2]); playGame(rps[2]);
 });
-function playGame(playerChoice){
+function playGame(playerChoice){}
     var cpuChoice = Math.floor(Math.random() * 2.99);
     console.log(cpuChoice, playerChoice);
 
     switch(playerChoice){
         if(gameOver = true){
             return;
-        } else{
+        } 
+        else{
             var cpuChoice = Math.floor(Math.random() * 2.99);
             console.log(cpuChoice, playerChoice);
 
