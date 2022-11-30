@@ -7,6 +7,7 @@ var start = 50;
 var finish = 750;
 var carPos = 2;
 var speed = 3;
+var carWidth = 50;
 
 var startFuel = randomNumber(canvas.width,600);
 var fuel = startFuel;
@@ -16,6 +17,14 @@ var gameOver = true;
 var seconds =3;
 var fps = 60;
 var frames = fps;
+
+//load game sprite
+var carSprite = new Image();
+carSprite.src = "images/WarioCar.png";
+
+carSprite.onload = function(){
+    main();
+}
 
 //add some event listeners
 document.addEventListener("keydown", keyPressDown);
@@ -53,7 +62,7 @@ function main(){
      drawStartFinish();
     drawCar();
     drawFuelBar();
-    if(carPos + 40 > finish || fuel<=0){
+    if(carPos + carWidth > finish || fuel<=0){
         drawResults();
     }
 
@@ -73,8 +82,9 @@ function drawStartFinish(){
 }
 function drawCar(){
     //draw a car
-ctx.fillStyle = "red";
-ctx.fillRect(carPos,canvas.height/2, 40, 20);
+//ctx.fillStyle = "red";
+//ctx.fillRect(carPos,canvas.height/2, carWidth, 20);
+ctx.drawImage(carSprite, carPos,canvas.height/2 + 30, carWidth, 20);
 }
 function drawFuelBar(){
     var currentBarWidth = fuelBarWidth * (fuel/startFuel);
@@ -88,7 +98,7 @@ function drawFuelBar(){
     }
 }
 function drawResults(){
-    if(carPos > finish){
+    if(carPos + carWidth> finish){
         ctx.fillStyle = "black";
         ctx.font = "25px Arial";
         ctx.textAllign = "center";
