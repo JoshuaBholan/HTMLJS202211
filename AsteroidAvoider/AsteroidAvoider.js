@@ -11,7 +11,7 @@ function Asteroid(){
     //properties to draw the asteroid
     this.radius = randomRange(15,2);
     this.x = randomRange(canvas.width - this.radius,this.radius);
-    this.y = randomRange(canvas.height - this.radius,this.radius);
+    this.y = randomRange(canvas.height - this.radius,this.radius) - canvas.height;
     this.vy = randomRange(10,5);
     this.color = "white";
 
