@@ -8,6 +8,7 @@ var finish = 956;
 var carPos = 2;
 var speed = 5;
 var carWidth = 50;
+//var carHeight = 5;
 
 var startFuel = randomNumber(canvas.width,600);
 var fuel = startFuel;
@@ -18,11 +19,24 @@ var seconds =3;
 var fps = 60;
 var frames = fps;
 
+
 //load game sprite
 var carSprite = new Image();
-carSprite.src = "images/WarioCar.png";
+carSprite.src = "images/WarioCarhi.png";
 
 carSprite.onload = function(){
+    main();
+}
+
+var backround = new Image();
+backround.src = "images/backround.png";
+backround.onload = function(){
+    main();
+}
+
+var box = new Image();
+box.src = "images/tv.webp";
+box.onload = function(){
     main();
 }
 
@@ -43,7 +57,7 @@ function main(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     if(gameOver){
         ctx.fillStyle = "black";
-        ctx.font = "30px Arial";
+        ctx.font = "30px Comic Sans";
         ctx.textAlign = "center";
         ctx.fillText("press Space to Start", canvas.width/2, canvas.height/2);
     }
@@ -73,7 +87,7 @@ function main(){
 
 }
 function drawStartFinish(){
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "maroon";
     //startline
     ctx.fillRect(start, 50, 10, 500);
     //finishline
@@ -84,13 +98,13 @@ function drawCar(){
     //draw a car
 //ctx.fillStyle = "red";
 //ctx.fillRect(carPos,canvas.height/2, carWidth, 20);
-ctx.drawImage(carSprite, carPos,canvas.height/2 + 30, carWidth, 20);
+ctx.drawImage(carSprite, carPos,canvas.height/2 + 30, carWidth,20);
 }
 function drawFuelBar(){
     var currentBarWidth = fuelBarWidth * (fuel/startFuel);
     ctx.fillStyle = "black";
     ctx.fillRect(start, 30, fuelBarWidth, 10);
-    ctx.font = "25px Arial";
+    ctx.font = "25px Comic Sans";
     ctx.fillText("Fuel",start,25);
     if(fuel > 0){
         ctx.fillStyle = "green";
@@ -99,15 +113,15 @@ function drawFuelBar(){
 }
 function drawResults(){
     if(carPos + carWidth> finish){
-        ctx.fillStyle = "black";
-        ctx.font = "25px Arial";
+        ctx.fillStyle = "blue";
+        ctx.font = "25px Comic Sans";
         ctx.textAlign = "center";
         ctx.fillText("You Made it to the finish... you win!", canvas.width/2, canvas.height/2);
     }
     else
     {
-        ctx.fillStyle = "black";
-        ctx.font = "25px Arial";
+        ctx.fillStyle = "red";
+        ctx.font = "25px Comic Sans";
         ctx.textAlign = "center";
         ctx.fillText("You ran out of fuel! you absolute loser!", canvas.width/2, canvas.height/2);
     }
@@ -124,7 +138,7 @@ if(frames < 0){
 }
 function drawStartTimer(){
     ctx.fillStyle = "black";
-    ctx.font = "25px Arial";
+    ctx.font = "25px Comic Sans";
     ctx.textAlign = "center";
     ctx.fillText(seconds, canvas.width/2, canvas.height/2);
 }
