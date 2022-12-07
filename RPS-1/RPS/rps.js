@@ -6,12 +6,22 @@ rps[0] = `Rock`
 rps[1] = `Paper`
 rps[2] = `Scissors`
 
+
+var rock = new Image();
+var paper = new Image();
+var scissors = new Image();
+var hrock = new Image();
+var hpaper = new Image();
+var hscissors = new Image();
+
+
 //Array of Buttons
 var btn = document.querySelectorAll(`a`)
 //Changes the words in the buttons
 btn[0].innerHTML = rps[0]
 btn[1].innerHTML = rps[1]
 btn[2].innerHTML = rps[2]
+
 
 //Makes the buttons clickable.
 //Once clicked they call the play function
@@ -28,6 +38,14 @@ btn[2].addEventListener(`click`, function(e){
 //Play function accepts an integer
 //generates an integer 0-2
 //Displays the player's choice and computer's choice
+function onKeyUp(e){
+    if(e.keyCode == 32){
+        console.log("you pressed the spacebar")
+        gameOver = false;
+        draw(rock,paper,scissors,rock,paper,scissors);
+    }
+}
+
 function play(pChoice)
 {
     var cChoice = Math.floor(Math.random()*2.999999)
