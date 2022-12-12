@@ -381,18 +381,21 @@ gameState[1] = function(){
     //vertical movement
 
     if(ship.up){
-        ship.vy = -10;
-    }else{
-        ship.vy = 3;
+        ship.vy = -6;
+    }
+    if(ship.down){
+        ship.vy = 6;
     }
     //horizontal movement
     if(ship.left){
-        ship.vx = -5;
-    }else if(ship.right){
-        ship.vx = 5;
+        ship.vx = -10;
+    }if(ship.right){
+        ship.vx = 10;
     }else{
-        ship.vx = 0;
+        ship.vx = -3;
     }
+    
+    
     for(var i = 0; i<asteroids.length; i++){
         var dX = ship.x - asteroids[i].x;
         var dY = ship.y - asteroids[i].y;

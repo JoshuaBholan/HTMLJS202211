@@ -1,0 +1,22 @@
+header{
+display: flex;
+justify-content: left;
+color: red;
+
+}
+
+html,body{
+    display: grid;
+    justify-content: center;
+    background-color: black;
+    background-image:url(images/space-background.jpg)
+}
+canvas{
+    border: 1px solid blue
+
+}
+footer{
+    display: flex;
+    justify-content: left;
+    color: red;
+}
