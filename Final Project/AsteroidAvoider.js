@@ -13,6 +13,7 @@ var asteroids = [];
 
 //player ship varables
 var ship = new PlayerShip();
+ship.src = "images/Ship.png";
 
 //create keyboard event handlers
 document.addEventListener("keydown",presskeyDown);
@@ -256,6 +257,7 @@ function Asteroid(){
         ctx.arc(this.x, this.y, this.radius,0, Math.PI *2, true);
         ctx.closePath();
         ctx.fill();
+        ctx.drawImage();
         ctx.restore();
         
     }
@@ -299,8 +301,6 @@ function PlayerShip(){
             ctx.fill();
             ctx.restore();
         }
-
-        //draw the ship
         ctx.fillStyle = "red";
         ctx.beginPath();
         ctx.moveTo(0,-10);
@@ -311,6 +311,10 @@ function PlayerShip(){
         ctx.fill();
         ctx.restore();
     }
+
+        //draw the ship
+        
+
     this.moveShip = function(){
         this.x += this.vx;
         this.y += this.vy;
@@ -381,20 +385,22 @@ gameState[1] = function(){
     //vertical movement
 
     if(ship.up){
-        ship.vy = -6;
+        ship.vy = -10;
     }
-    if(ship.down){
-        ship.vy = 6;
+    else if(ship.down){
+        ship.vy = 10;
+    }
+    else{
+        ship.vy = 0;
     }
     //horizontal movement
     if(ship.left){
-        ship.vx = -10;
-    }if(ship.right){
-        ship.vx = 10;
+        ship.vx = -5;
+    }else if(ship.right){
+        ship.vx = 5;
     }else{
-        ship.vx = -3;
+        ship.vx = 0;
     }
-    
     
     for(var i = 0; i<asteroids.length; i++){
         var dX = ship.x - asteroids[i].x;
