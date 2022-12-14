@@ -257,7 +257,6 @@ function Asteroid(){
         ctx.arc(this.x, this.y, this.radius,0, Math.PI *2, true);
         ctx.closePath();
         ctx.fill();
-        ctx.drawImage();
         ctx.restore();
         
     }
@@ -309,6 +308,7 @@ function PlayerShip(){
         ctx.lineTo(0,-10);
         ctx.closePath();
         ctx.fill();
+        ctx.drawImage(this.width,this.height,0,0);
         ctx.restore();
     }
 
