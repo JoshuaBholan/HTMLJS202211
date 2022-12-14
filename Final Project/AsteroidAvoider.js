@@ -10,10 +10,30 @@ var gameState = [];
 //asteroid varables
 var numAsteroids = 20;
 var asteroids = [];
+var asteroidss = new Image();
+asteroidss.src = "images/Asteroid.png";
 
 //player ship varables
 var ship = new PlayerShip();
-ship.src = "images/Ship.png";
+shipsprite = new Image();
+shipsprite.src = "images/Ship.png";
+
+var mainmenu = new Image();
+mainmenu.src = "images/Main_Menu.png";
+mainmenu.onload = function(){
+    main();
+}
+
+var spacegame = new Image();
+spacegame.src = "images/spacegame.jpg";
+spacegame.onload = function(){
+    main();
+}
+var end = new Image();
+end.src = "images/endd.jpg";
+end.onload = function(){
+    main();
+}
 
 //create keyboard event handlers
 document.addEventListener("keydown",presskeyDown);
@@ -247,7 +267,7 @@ function Asteroid(){
     this.x = randomRange(canvas.width - this.radius,this.radius);
     this.y = randomRange(canvas.height - this.radius,this.radius) - canvas.height;
     this.vy = randomRange(10,5);
-    this.color = "white";
+    this.color = "brown";
 
     //methods (functions) to draw
     this.drawAsteroid = function(){
@@ -300,19 +320,11 @@ function PlayerShip(){
             ctx.fill();
             ctx.restore();
         }
+        //drawship
         ctx.fillStyle = "red";
-        ctx.beginPath();
-        ctx.moveTo(0,-10);
-        ctx.lineTo(10,10);
-        ctx.lineTo(-10,10);
-        ctx.lineTo(0,-10);
-        ctx.closePath();
-        ctx.fill();
-        ctx.drawImage(this.width,this.height,0,0);
+        ctx.drawImage(shipsprite,0,0,this.width*4,this.height*4);
         ctx.restore();
     }
-
-        //draw the ship
         
 
     this.moveShip = function(){
@@ -345,7 +357,6 @@ function PlayerShip(){
     }
 }
 //for loop to instaniate astroide for game
-
 function main(){
     //clear the canvas
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -365,19 +376,15 @@ function main(){
 gameState[0] = function(){
     // code for main menu
     ctx.save();
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.fillText("Asteroid Avoider", canvas.width/2, canvas.height/2 - 30);
-    ctx.font = "15px Arial";
-    ctx.fillText("press Space to Start", canvas.width/2, canvas.height/2 + 20)
+    ctx.drawImage(mainmenu,0,0,canvas.width,canvas.height);
     ctx.restore();
 }
 
 // Play Game State
 gameState[1] = function(){
     ctx.save();
-    ctx.font = "15px Arial";
+    ctx.drawImage(spacegame,0,0,canvas.width,canvas.height);
+    ctx.font = "15px comic sans";
     ctx.fillStyle = "white";
     ctx.fillText("Score: " + score.toString(), canvas.width - 150,30)
     ctx.restore();
@@ -439,8 +446,9 @@ gameState[1] = function(){
             highScore = score;
 
         ctx.save();
-        ctx.font = '30px Arial';
-        ctx.fillStyle = "white";
+        ctx.drawImage(end,0,0,canvas.width,canvas.height);
+        ctx.font = '30px times new roman';
+        ctx.fillStyle = "black";
         ctx.textAlign = "center";
         ctx.fillText("Game Over, Your Score was: " + score.toString(), canvas.width/2, canvas.height/2 - 60);
         ctx.fillText("your High Score is " + highScore.toString(), canvas.width/2, canvas.height/2 - 30)
@@ -451,6 +459,7 @@ gameState[1] = function(){
         }else{
             //code for game over
         ctx.save();
+        ctx.drawImage(end,0,0,canvas.width,canvas.height);
         ctx.font = '30px Arial';
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
