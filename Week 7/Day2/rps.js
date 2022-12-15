@@ -9,7 +9,7 @@ var hrock = new Image();
 var hpaper = new Image();
 var hscissors = new Image();
 
-rock.src = "Week 7/Day2/images/rock.jpg"
+rock.src = "images/rock.jpg"
 paper.src = "images/paper.jpg"
 scissors.src = "images/scissors.jpg"
 

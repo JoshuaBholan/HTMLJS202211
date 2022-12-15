@@ -264,7 +264,7 @@ if(e.keyCode == 40){
 function Asteroid(){
     //properties to draw the asteroid
     this.radius = randomRange(15,2);
-    this.x = randomRange(canvas.width - this.radius,this.radius);
+    this.x = randomRange(canvas.width - this.radius,this.radius)
     this.y = randomRange(canvas.height - this.radius,this.radius) - canvas.height;
     this.vy = randomRange(10,5);
     this.color = "brown";
@@ -274,7 +274,7 @@ function Asteroid(){
         ctx.save();
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.radius,0, Math.PI *2, true);
+        ctx.arc(this.x, this.y, this.radius,0, Math.PI *2, true)  ;
         ctx.closePath();
         ctx.fill();
         ctx.restore();
@@ -322,7 +322,7 @@ function PlayerShip(){
         }
         //drawship
         ctx.fillStyle = "red";
-        ctx.drawImage(shipsprite,0,0,this.width*4,this.height*4);
+        ctx.drawImage(shipsprite,0,0,this.width,this.height);
         ctx.restore();
     }
         
