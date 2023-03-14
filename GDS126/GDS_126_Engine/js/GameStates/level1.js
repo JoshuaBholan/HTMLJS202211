@@ -16,6 +16,7 @@ ground.img.src=`images/ground.png`
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
 
+
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
 ground.world = level;
@@ -84,7 +85,7 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
+	bullets[i].img.src="images/mrt.jpg"
 	bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
 	bullets[i].changeState(`walk`)
