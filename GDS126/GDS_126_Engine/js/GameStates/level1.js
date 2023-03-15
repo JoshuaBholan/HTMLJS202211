@@ -46,7 +46,7 @@ g1.add([ground,leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground,])
 
 //used to render the sprites
 var sprites = new Group();
@@ -88,7 +88,7 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	bullets[i].img.src="images/attack.jpg"
+	bullets[i].img.src="images/attack2.jpg"
 	//bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
 	//bullets[i].changeState(`walk`)
@@ -283,6 +283,7 @@ gameStates[`level1`] = function()
 
 	//renders the objects in the rect group
 	rects.render(`drawRect`, [0,0,100,100])
+	plat.drawStaticImage()
 	
 	/*----Used for debugging----*/
 	/*context.beginPath()
