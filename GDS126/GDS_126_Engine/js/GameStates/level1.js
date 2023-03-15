@@ -16,6 +16,7 @@ ground.img.src=`images/ground.png`
 //A platform
 var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
 
+
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
 ground.world = level;
@@ -57,7 +58,7 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src = `images/sky.png`
+sky.img.src = `images/skyfull.png`
 
 /*
  	//Not used, unless you want a 4th level of paralax
@@ -67,7 +68,7 @@ sky.img.src = `images/sky.png`
 
 //repeating background
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/hillsb3.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
@@ -84,7 +85,7 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
+	bullets[i].img.src="images/mrt.jpg"
 	bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
 	bullets[i].changeState(`walk`)
