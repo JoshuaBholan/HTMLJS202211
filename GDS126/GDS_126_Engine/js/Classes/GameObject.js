@@ -78,7 +78,7 @@ function GameObject(obj)
 	
 	this.collisionPoints = {
 		top:{x:0,y: -this.hitBoxHeight/2},
-		right:{x:this.hitBoxWidth/2,y:0},
+		right:{x:this.hitBoxWidth/2 ,y:0},
 		bottom:{x:0,y:this.hitBoxHeight/2},
 		left:{x:-this.hitBoxWidth/2,y:0}
 	}
