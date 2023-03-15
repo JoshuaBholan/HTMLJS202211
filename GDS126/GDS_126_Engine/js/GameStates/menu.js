@@ -10,7 +10,7 @@ console.log(startButton.collisionPoints.right)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/MainMenu.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
