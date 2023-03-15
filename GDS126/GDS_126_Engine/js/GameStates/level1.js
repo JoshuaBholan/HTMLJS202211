@@ -300,7 +300,7 @@ gameStates[`level1`] = function()
 	//Moves, checks collision and renders projectiles.
 	for(let i=0; i<bullets.length; i++)
 	{
-		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
+		//if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
 		//bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
