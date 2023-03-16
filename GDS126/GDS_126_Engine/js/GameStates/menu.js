@@ -34,6 +34,7 @@ gameStates[`menu`] =function(){
 	{
 		//Default Button Graphic
 		startButton.color = `yellow`
+		startButton.img.src=`images/MainMenu1.png`
 	}
 
 	menuBackground.drawStaticImage();
