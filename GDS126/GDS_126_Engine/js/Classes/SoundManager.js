@@ -31,3 +31,11 @@ soundNodes=null
 
 
 document.addEventListener(`click`, ()=>  sounds.play(`backround`,.5))
+var x =document.getElementById(`backround`);
+function enableLoop(){
+    x.loop = true;
+    x.load();
+}
+function checkLoop(){
+    alert(x.loop);
+}
