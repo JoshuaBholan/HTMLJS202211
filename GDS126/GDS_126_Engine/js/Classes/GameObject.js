@@ -8,8 +8,8 @@ function GameObject(obj)
 		this.x = canvas.width/2;
 		this.y = canvas.height/2;
 		this.start = {x:this.x, y:this.y};
-		this.width = 100;
-		this.height = 100;
+		this.width = 50;
+		this.height = 50;
 		
 		this.color = "#ff0000";
 		this.force = 1;
