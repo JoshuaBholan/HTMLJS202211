@@ -14,7 +14,10 @@ var ground = new GameObject({width:canvas.width*10, x:canvas.width*10/2,height:6
 ground.img.src=`images/ground.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"brown"})
+plat.img.src=`images/Platform.png`;
+
+
 
 
 //A level object when it is moved other objects move with it.
@@ -43,7 +46,7 @@ g1.add([ground,leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground,])
 
 //used to render the sprites
 var sprites = new Group();
@@ -72,7 +75,7 @@ rbg.img.src=`images/hillsb3.png`
 
 //middleground
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+bg.img.src=`images/pleasw.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -85,10 +88,10 @@ var currentBullet = 0;
 for(let i=0; i<100; i++)
 {
 	bullets[i] = new GameObject({width:64, height:64})
-	bullets[i].img.src="images/mrt.jpg"
-	bullets[i].makeSprite(playerData)
+	bullets[i].img.src="images/attack.png"
+	//bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	//bullets[i].changeState(`walk`)
 }
 
 //console.log(bullets)
@@ -139,7 +142,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		//sounds.play(`splode`,1)
+		//sounds.play(`Jump.mp3`,0)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -165,7 +168,7 @@ gameStates[`level1`] = function()
 			bullets[currentBullet].y = wiz.y + 20;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			//sounds.play(`splode`,1)
+			//sounds.play(`attack.mp3`,0)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
@@ -257,7 +260,7 @@ gameStates[`level1`] = function()
 	var groundPattern = context.createPattern(ground.img, `repeat`);
 	//Applies pattern to ground and platform
 	ground.color = groundPattern
-	plat.color = groundPattern
+	
 
 	//Sets up pattern for the sky
 	var skyPattern = context.createPattern(sky.img, `repeat`);
@@ -280,6 +283,7 @@ gameStates[`level1`] = function()
 
 	//renders the objects in the rect group
 	rects.render(`drawRect`, [0,0,100,100])
+	plat.drawStaticImage()
 	
 	/*----Used for debugging----*/
 	/*context.beginPath()
@@ -296,10 +300,11 @@ gameStates[`level1`] = function()
 	//Moves, checks collision and renders projectiles.
 	for(let i=0; i<bullets.length; i++)
 	{
-		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
+		//if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
-		bullets[i].play(function(){return}).drawSprite()
+		//bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
+		bullets[i].drawStaticImage([])
 		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
 			
