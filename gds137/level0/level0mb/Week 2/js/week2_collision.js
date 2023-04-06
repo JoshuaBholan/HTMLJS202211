@@ -17,6 +17,7 @@ var prevX;
 	//Instantiate the Player
 	player = new GameObject();
 	player.x = 100;
+	player.color = 'purple';
 	player.width = 20;
 	player.height = 20;
 	
