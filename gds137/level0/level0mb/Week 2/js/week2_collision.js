@@ -18,8 +18,6 @@ var prevX;
 	player = new GameObject();
 	player.x = 100;
 	player.color = 'purple';
-	player.width = 20;
-	player.height = 20;
 	
 	lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
