@@ -48,10 +48,10 @@ function animate()
 		player.y > canvas.height - player.height/2;
 	}
 	//top bounce
-	if(player.y < canvas.height-50-player.height)
+	if(player.y < player.height+750 - canvas.height)
 	{
 		player.vy = -player.vy;
-		player.y > canvas.height - player.height/2;
+		player.y < player.height -canvas.height;
 	}
 
 	//---------------------------------------------------
