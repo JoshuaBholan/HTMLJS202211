@@ -5,7 +5,7 @@ var context;
 var timer;
 var interval = 1000/60;
 var player;
-var ball;
+
 
 
 	canvas = document.getElementById("canvas");
@@ -32,13 +32,7 @@ function animate()
 	if(player.x > canvas.width - player.width/2)
 	{
 		player.vx = -player.vx;	
-		player.x=canvas.width;
-		player.x-= 50; //Some number of pixels
-		player.vx = -player.vx;	
-	}
-	if(player.x > canvas.width)
-	{
-		player.vx = -10;
+		player.x = canvas.width - player.width/2;
 	}
 	//---------------------------------------------------
 	
