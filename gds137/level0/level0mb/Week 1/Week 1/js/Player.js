@@ -31,6 +31,7 @@ function Player()
 		
 	}	
 	
+	
 		
 	
 	//This changes the player's position

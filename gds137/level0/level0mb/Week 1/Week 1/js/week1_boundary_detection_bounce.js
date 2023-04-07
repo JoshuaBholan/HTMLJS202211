@@ -33,12 +33,14 @@ function animate()
 	{
 		player.vx = -player.vx;	
 		player.x = canvas.width - player.width/2;
+		player.color ='black'
 	}
 	//left bounce
 	if(player.x < 50)
 	{
 		player.vx = -player.vx;
 		player < 50 - player.width/2;
+		player.color = 'magenta'
 
 	}
 	//bottom bounce
@@ -46,12 +48,14 @@ function animate()
 	{
 		player.vy = -player.vy;
 		player.y > canvas.height - player.height/2;
+		player.color = 'green'
 	}
 	//top bounce
 	if(player.y < player.height+750 - canvas.height)
 	{
 		player.vy = -player.vy;
 		player.y < player.height -canvas.height;
+		player.color = 'red'
 	}
 
 	//---------------------------------------------------
