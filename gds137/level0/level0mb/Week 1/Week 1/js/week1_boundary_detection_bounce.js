@@ -5,7 +5,7 @@ var context;
 var timer;
 var interval = 1000/60;
 var player;
-var ball = new Ball();
+var ball;
 
 
 	canvas = document.getElementById("canvas");
@@ -36,10 +36,4 @@ function animate()
 	//---------------------------------------------------
 	
 	player.draw();
-}
-function ball()
-{
-ball.x=canvas.width;
-ball.x-= //Some number of pixels
-ball.vx = -ball.vx;
 }
