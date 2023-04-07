@@ -22,10 +22,16 @@ function Player()
 		context.save();
 			context.fillStyle = this.color;
 			context.translate(this.x, this.y);
-			context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
+			//context.fillRect((-this.width/2), (-this.height/2), this.width, this.height);
+			context.beginPath();
+			context.arc(x,y,radius,0,360*Math.PI/180,true)
+			context.closePath();
+			context.fill();
 		context.restore();
 		
 	}	
+	
+		
 	
 	//This changes the player's position
 	this.move = function()

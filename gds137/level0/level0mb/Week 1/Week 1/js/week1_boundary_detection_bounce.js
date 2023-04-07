@@ -6,6 +6,7 @@ var timer;
 var interval = 1000/60;
 var player;
 
+
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	player = new Player();
