@@ -26,7 +26,10 @@ function animate()
 	//--------------Loop the Screen----------------------
 	if(player.x > canvas.width + player.width/2)
 	{
-		player.x = -player.width/2	
+		player.x = -player.width
+		player.x=canvas.width;
+		player.x-= //Some number of pixels
+		player.vx = -player.vx;	
 	}
 	//---------------------------------------------------
 	
