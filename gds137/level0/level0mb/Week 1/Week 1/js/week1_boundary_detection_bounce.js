@@ -42,11 +42,18 @@ function animate()
 
 	}
 	//bottom bounce
-	if(player.y < 50)
+	if(player.y > canvas.height+50-player.height)
 	{
 		player.vy = -player.vy;
-		player > 50 - player.height/2;
+		player.y > canvas.height - player.height/2;
 	}
+	//top bounce
+	if(player.y < canvas.height-50-player.height)
+	{
+		player.vy = -player.vy;
+		player.y > canvas.height - player.height/2;
+	}
+
 	//---------------------------------------------------
 	
 	player.draw();
