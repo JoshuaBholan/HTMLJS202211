@@ -41,13 +41,6 @@ function Player()
 	}
 	if(this.x > canvas.width - this.width/2)
 	{
-		this.vx = -this.vx;	
-		this.x=canvas.width;
-		this.x-= 50; //Some number of pixels
-		this.vx = -this.vx;	
-	}
-	if(this.x > canvas.width)
-	{
-		this.vx = -10;
+		this.vx = -this.vx;		
 	}
 }
