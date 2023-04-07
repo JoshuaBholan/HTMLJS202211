@@ -27,9 +27,7 @@ function animate()
 	if(player.x > canvas.width + player.width/2)
 	{
 		player.x = -player.width/2;
-		player.x=canvas.width;
-		player.x-= 50; //Some number of pixels
-		player.vx = -player.vx;	
+		
 	}
 	//---------------------------------------------------
 	
