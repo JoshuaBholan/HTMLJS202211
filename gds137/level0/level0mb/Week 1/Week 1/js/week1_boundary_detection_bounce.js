@@ -36,6 +36,10 @@ function animate()
 		player.x-= 50; //Some number of pixels
 		player.vx = -player.vx;	
 	}
+	if(player.x > canvas.width)
+	{
+		player.vx = -10;
+	}
 	//---------------------------------------------------
 	
 	player.draw();
