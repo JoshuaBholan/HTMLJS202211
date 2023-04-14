@@ -37,12 +37,12 @@ function animate()
 	if(w)
 	{
 		console.log("Moving Up");
-		player.y += -2;
+		player.y += -4;
 	}
 	if(s)
 	{
 		console.log("Moving Down");
-		player.y += 2;
+		player.y += 4;
 	}
 	
 	

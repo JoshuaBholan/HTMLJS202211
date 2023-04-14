@@ -93,4 +93,7 @@ function GameObject(x,y,w,h,color)
 		}
 		return false;
 	}
+	
+	
+
 }

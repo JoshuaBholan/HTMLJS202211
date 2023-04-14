@@ -46,14 +46,7 @@ function animate()
 		//console.log("Moving Right");
 		player.x += -2;
 	}
-	if(w)
-	{
-		player.y += 2;
-	}
-	if(s)
-	{
-		player.y += -2;
-	}
+	
 	
 	
 	//Check Collisions
@@ -99,10 +92,10 @@ function animate()
 	
 	//Update the Screen
 	player.drawCircle();
-	lBlock1.drawCircle();
-	lBlock2.drawCircle();
-	rBlock1.drawRect();
-	rBlock2.drawRect();
+	//lBlock1.drawCircle();
+	//lBlock2.drawCircle();
+	//rBlock1.drawRect();
+	//rBlock2.drawRect();
 
 }
 
