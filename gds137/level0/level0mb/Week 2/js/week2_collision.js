@@ -94,6 +94,9 @@ function animate()
 		prevX = player.x;
 	}
 	
+	
+	
+	
 	//Update the Screen
 	player.drawCircle();
 	lBlock1.drawCircle();
