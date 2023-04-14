@@ -1,5 +1,5 @@
 // JavaScript Document
-function GameObject(x,y,w,h,color)
+function Player(x,y,w,h,color)
 {
 	
 	//Default Values
