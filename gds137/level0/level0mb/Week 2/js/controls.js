@@ -22,11 +22,11 @@ function press(e)
 	{
 		d = true;
 	}
-	if(e.keycode == 83)
+	if(e.keyCode == 83)
 	{
 		s = true;
 	}
-	if(e.keycode == 87)
+	if(e.keyCode == 87)
 	{
 		w = true;
 	}
@@ -46,11 +46,11 @@ function release(e)
 	{
 		d = false;
 	}
-	if(e.keycode == 83)
+	if(e.keyCode == 83)
 	{
 		s = false;
 	}
-	if(e.keycode == 87)
+	if(e.keyCode == 87)
 	{
 		w = false;
 	}
