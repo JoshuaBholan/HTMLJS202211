@@ -46,14 +46,14 @@ function animate()
 		//console.log("Moving Right");
 		player.x += -2;
 	}
-	//if(w)
-	//{
+	if(w)
+	{
 		player.y += 2;
-	//}
-	//if(s)
-	//{
-	//	player.y += -2;
-	//}
+	}
+	if(s)
+	{
+		player.y += -2;
+	}
 	
 	
 	//Check Collisions
