@@ -1,6 +1,7 @@
 // JavaScript Document
 function GameObject(x,y,w,h,color)
 {
+	var player1 = new GameObject();
 	
 	//Default Values
 	if(x == undefined)
