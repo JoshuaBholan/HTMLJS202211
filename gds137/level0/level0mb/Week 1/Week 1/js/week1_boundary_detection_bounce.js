@@ -11,6 +11,8 @@ var player;
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	player = new Player();
+	 player1 = new GameObject()
+
 	
 	//------Declare the Player's speed on the x and y axis------
 	player.vx = 5;
