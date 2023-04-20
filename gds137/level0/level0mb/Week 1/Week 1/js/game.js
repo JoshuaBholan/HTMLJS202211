@@ -61,7 +61,7 @@ function animate()
 
 	//---------------------------------------------------
 	
-	player.draw();
+	player.drawCircle();
 }
 
 
