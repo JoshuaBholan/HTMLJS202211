@@ -24,16 +24,16 @@ function animate()
 	
 	
 	//Move the Player to the right
-	if(d)
-	{
-		console.log("Moving Right");
-		player.x += 2;
-	}
-	if(a)
-	{
-		console.log("Moving Left");
-		player.x += -2;
-	}
+	//if(d)
+	//{
+		//console.log("Moving Right");
+		//player.x += 2;
+	//}
+	//if(a)
+	//{
+		//console.log("Moving Left");
+		//player.x += -2;
+	//}
 	if(w)
 	{
 		console.log("Moving Up");
