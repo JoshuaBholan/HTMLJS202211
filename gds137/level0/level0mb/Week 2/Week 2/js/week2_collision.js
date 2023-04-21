@@ -15,7 +15,7 @@ var prevX;
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	player = new Player();
+	player = new GameObject();
 	player.x = 8;
 	player.width = 15
 	player.color = "purple"
@@ -28,11 +28,11 @@ var prevX;
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
 	
-
 function animate()
 {
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);	
+	
 	
 	
 	//Move the Player to the right
