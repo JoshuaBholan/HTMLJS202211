@@ -17,8 +17,6 @@ var prevX;
 	//Instantiate the Player
 	player = new GameObject();
 	player.x = 100;
-	//player.y = 100;
-	player.color = 'purple';
 	
 	lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
@@ -46,7 +44,6 @@ function animate()
 		//console.log("Moving Right");
 		player.x += -2;
 	}
-	
 	
 	
 	//Check Collisions
@@ -86,9 +83,6 @@ function animate()
 	{
 		prevX = player.x;
 	}
-	
-	
-	
 	
 	//Update the Screen
 	player.drawCircle();

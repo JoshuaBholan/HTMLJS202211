@@ -4,7 +4,7 @@ function GameObject(x,y,w,h,color)
 	
 	//Default Values
 	if(x == undefined)
-		this.x = canvas.width/2-520;
+		this.x = canvas.width/2;
 	else 
 		this.x = x;
 	if(y == undefined)
@@ -13,17 +13,17 @@ function GameObject(x,y,w,h,color)
 		this.y = y;
 	
 	if(w == undefined)
-		this.width = 30;
+		this.width = 100;
 	else 
 		this.width = w;
 	if(h == undefined)
-		this.height = 150;
+		this.height = 100;
 	else 
 		this.height = h;
 	
 		//player's color
 	if(color == undefined)
-		this.color = "purple";
+		this.color = "#ff0000";
 	else 
 		this.color = color;
 	
