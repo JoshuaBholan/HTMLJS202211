@@ -20,10 +20,10 @@ var prevX;
 	player.width = 15
 	player.color = "purple"
 	
-	lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
-	lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
-	rBlock1 = new GameObject((canvas.width-350), canvas.height/2, 100, 100, "orange");
-	rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
+	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
+	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
+	//rBlock1 = new GameObject((canvas.width-350), canvas.height/2, 100, 100, "orange");
+	//rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -35,18 +35,19 @@ function animate()
 	
 	
 	
-	//Move the Player to the right
-	if(d)
-	{
-		//console.log("Moving Right");
-		player.x += 2;
-	}
 	
-	if(a)
-	{
+	//Move the Player to the right
+	//if(d)
+	//{
 		//console.log("Moving Right");
-		player.x += -2;
-	}
+		//player.x += 2;
+	//}
+	
+	//if(a)
+	//{
+		//console.log("Moving Right");
+		//player.x += -2;
+	//}
 	if(w)
 	{
 		//console.log("Moving Right");
@@ -63,40 +64,40 @@ function animate()
 	//Check Collisions
 	
 	//Demonstrates Accuracy of Bounding Box Collision
-	if(lBlock1.hitTestObject(player))
-	{
+	//if(lBlock1.hitTestObject(player))
+	//{
 		//change color
-		lBlock1.color = "yellow";
-	}
-	else
-	{
-		lBlock1.color = "#00ff00";
-	}
+		//lBlock1.color = "yellow";
+	//}
+	//else
+	//{
+		//lBlock1.color = "#00ff00";
+	//}
 	
 	//Shows Bounding Boxes
-	if(lBlock2.hitTestObject(player))
-	{
+	//if(lBlock2.hitTestObject(player))
+	//{
 		//draw bounding boxes
-		context.strokeRect(lBlock2.x- lBlock2.width/2, lBlock2.y - lBlock2.height/2, lBlock2.width, lBlock2.height)
-		context.strokeRect(player.x- player.width/2, player.y - player.height/2, player.width, player.height)
-	}
+		//context.strokeRect(lBlock2.x- lBlock2.width/2, lBlock2.y - lBlock2.height/2, lBlock2.width, lBlock2.height)
+		//context.strokeRect(player.x- player.width/2, player.y - player.height/2, player.width, player.height)
+	//}
 	
 	//Demonstrates how often collisions take place
-	if(rBlock1.hitTestObject(player))
-	{
-		console.log("colliding");
-	}
+	//if(rBlock1.hitTestObject(player))
+	//{
+	//	console.log("colliding");
+	//}
 	
 	//Impede movement
-	if(rBlock2.hitTestObject(player))
-	{
-		player.x = prevX;
-		console.log("colliding");
-	}
-	else
-	{
-		prevX = player.x;
-	}
+	//if(rBlock2.hitTestObject(player))
+	//{
+	//	player.x = prevX;
+	//	console.log("colliding");
+	//}
+	//else
+	//{
+	//	prevX = player.x;
+	//}
 	
 	//Update the Screen
 	player.drawRect();
