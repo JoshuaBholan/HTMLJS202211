@@ -92,10 +92,10 @@ function animate()
 	
 	//Update the Screen
 	player.drawCircle();
-	//lBlock1.drawCircle();
-	//lBlock2.drawCircle();
-	//rBlock1.drawRect();
-	//rBlock2.drawRect();
+	lBlock1.drawCircle();
+	lBlock2.drawCircle();
+	rBlock1.drawRect();
+	rBlock2.drawRect();
 
 }
 
