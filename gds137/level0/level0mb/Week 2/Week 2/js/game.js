@@ -19,6 +19,7 @@ var Ball;
 	//----------------------------------------------------
 	
 	timer = setInterval(animate, interval);
+	
 
 
 function animate()
@@ -58,6 +59,7 @@ function animate()
 		Ball.y < Ball.height -canvas.height;
 		Ball.color = 'red'
 	}
+	
 
 	//---------------------------------------------------
 	

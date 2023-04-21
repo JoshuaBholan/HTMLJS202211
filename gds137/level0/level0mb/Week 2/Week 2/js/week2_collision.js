@@ -15,7 +15,7 @@ var prevX;
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	player = new GameObject();
+	player = new Player();
 	player.x = 8;
 	player.width = 15
 	player.color = "purple"
@@ -27,6 +27,7 @@ var prevX;
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
+	
 
 function animate()
 {
