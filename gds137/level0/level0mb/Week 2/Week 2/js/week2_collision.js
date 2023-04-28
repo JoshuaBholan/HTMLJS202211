@@ -121,6 +121,11 @@ function animate()
 		Ball.vx = -Ball.vx;
 		Ball < 50 - Ball.width/2;
 	}
+	if(Ball.x < 0)
+	{
+		Ball.x = 550;
+		Ball.y = 480;
+	}
 	
 	//Update the Screen
 	player.drawRect();
