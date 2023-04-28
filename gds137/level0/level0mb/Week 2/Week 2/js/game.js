@@ -14,11 +14,13 @@ var Ball;
 	Ball = new GameObject();
 	
 	//------Declare the Player's speed on the x and y axis------
-	Ball.vx = 5;
-	Ball.vy = 2;
+	Ball.vx = 10;
+	Ball.vy = 10;
 	//----------------------------------------------------
 	
 	timer = setInterval(animate, interval);
+
+	
 	
 function animate()
 {

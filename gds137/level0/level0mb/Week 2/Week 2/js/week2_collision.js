@@ -17,7 +17,8 @@ var prevX;
 	//Instantiate the Player
 	player = new GameObject();
 	player.x = 8;
-	player.width = 15
+	player.width = 15;
+	player.height = 150;
 	player.color = "purple"
 	
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
@@ -64,6 +65,7 @@ function animate()
 		//console.log("Moving Right");
 		player.y += 2;
 	}
+	
 	
 	
 	
