@@ -23,7 +23,13 @@ var prevX;
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
 	//rBlock1 = new GameObject((canvas.width-350), canvas.height/2, 100, 100, "orange");
-	//rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
+	rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
+	rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
+	rBlock2.x = 9;
+	rBlock2.y = -52;
+	rBlock3.x = 9;
+	rBlock3.y = 800;
+	
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -89,22 +95,32 @@ function animate()
 	//}
 	
 	//Impede movement
-	//if(rBlock2.hitTestObject(player))
-	//{
-	//	player.x = prevX;
-	//	console.log("colliding");
-	//}
-	//else
-	//{
-	//	prevX = player.x;
-	//}
+	if(rBlock2.hitTestObject(player))
+	{
+		player.y = prevY;
+		console.log("colliding");
+	}
+	else
+	{
+		prevY = player.y;
+	}
+	if(rBlock3.hitTestObject(player))
+	{
+		player.y = prevY;
+		console.log("colliding");
+	}
+	else
+	{
+		prevY = player.y;
+	}
 	
 	//Update the Screen
 	player.drawRect();
 	//lBlock1.drawCircle();
 	//lBlock2.drawCircle();
 	//rBlock1.drawRect();
-	//rBlock2.drawRect();
+	rBlock2.drawRect();
+	rBlock3.drawRect();
 
 }
 
