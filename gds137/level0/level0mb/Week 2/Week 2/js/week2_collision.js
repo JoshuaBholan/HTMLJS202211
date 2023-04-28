@@ -9,6 +9,7 @@ var player;
 
 //This is used to stop the player from moving through obstacles.
 var prevX;
+var prevY;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -25,11 +26,11 @@ var prevX;
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
 	//rBlock1 = new GameObject((canvas.width-350), canvas.height/2, 100, 100, "orange");
 	rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
-	rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
+	rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
 	rBlock2.x = 9;
 	rBlock2.y = -52;
 	rBlock3.x = 9;
-	rBlock3.y = 800;
+	rBlock3.y = 850;
 	
 
 	//Set the Animation Timer
@@ -114,6 +115,11 @@ function animate()
 	else
 	{
 		prevY = player.y;
+	}
+	if(Ball.hitTestObject(player))
+	{
+		Ball.vx = -Ball.vx;
+		Ball < 50 - Ball.width/2;
 	}
 	
 	//Update the Screen

@@ -39,13 +39,13 @@ function animate()
 		Ball.color ='black'
 	}
 	//left bounce
-	if(Ball.x < 50)
-	{
-		Ball.vx = -Ball.vx;
-		Ball < 50 - Ball.width/2;
-		Ball.color = 'magenta'
+	//if(Ball.x < 50)
+	//{
+		//Ball.vx = -Ball.vx;
+		//Ball < 50 - Ball.width/2;
+		//Ball.color = 'magenta'
 
-	}
+	//}
 	//bottom bounce
 	if(Ball.y > canvas.height+50-Ball.height)
 	{
