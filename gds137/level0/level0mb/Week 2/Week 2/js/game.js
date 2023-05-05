@@ -67,10 +67,12 @@ function animate()
 	if(Ball.x > canvas.width - Ball.width/2)
 	{
 		p1Wins + 1;
+		consolelog("p1 wins")
 	}
 	if(Ball.x < 50)
 	{
 		p2Wins + 1;
+		consolelog("p2 wins")
 	}
 	
 
