@@ -30,8 +30,6 @@ var prevY;
 	//rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
 	rBlock2.x = 9;
 	rBlock2.y = -52;
-	rBlock2.x = 9;
-	rBlock2.x = 850;
 	//rBlock1.x = 9;
 	//rBlock1.y = 850;
 	//rBlock3.x = 9;
@@ -136,15 +134,15 @@ function animate()
 	{
 		prevY = paddle.y;
 	}
-	if(rBlock1.hitTestObject(paddle))
-	{
-		paddle.y = prevY;
-		console.log("colliding");
-	}
-	else
-	{
-		prevY = paddle.y;
-	}
+	//if(rBlock1.hitTestObject(paddle))
+	//{
+		//paddle.y = prevY;
+		//console.log("colliding");
+	//}
+	//else
+	//{
+		//prevY = paddle.y;
+	//}
 	//paddle collision
 	if(Ball.hitTestObject(paddle))
 	{
