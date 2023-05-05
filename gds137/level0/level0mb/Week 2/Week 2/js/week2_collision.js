@@ -11,6 +11,7 @@ var paddle;
 //This is used to stop the player from moving through obstacles.
 var prevX;
 var prevY;
+var prevyy;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -126,13 +127,14 @@ function animate()
 	//Impede movement
 	if(rBlock2.hitTestObject(paddle))
 	{
-		paddle.y = prevY;
+		paddle.y = prevyy+10;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = paddle.y;
+		prevyy = paddle.y;
 	}
+	//stops movement on bottom
 	if(rBlock3.hitTestObject(paddle))
 	{
 		paddle.y = prevY;
