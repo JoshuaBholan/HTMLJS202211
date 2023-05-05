@@ -7,6 +7,8 @@ var timer;
 var interval = 1000/60;
 var Ball;
 var player;
+var p1Wins = 0;
+var p2Wins = 0;
 
 
 
