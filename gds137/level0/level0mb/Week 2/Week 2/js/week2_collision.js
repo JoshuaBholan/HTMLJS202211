@@ -96,6 +96,14 @@ function animate()
 	//{
 	//	console.log("colliding");
 	//}
+	if(Ball.hitTestObject(player))
+	{
+		if(Ball.y < player.y - player.height/6)
+		{
+			Ball.vx = -10;
+			Ball.vy = -10;
+		}
+	}
 	
 	//Impede movement
 	if(rBlock2.hitTestObject(player))
