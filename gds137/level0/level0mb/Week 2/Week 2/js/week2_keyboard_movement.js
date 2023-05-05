@@ -5,6 +5,7 @@ var context;
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
+var paddle;
 
 
 	//Set Up the Canvas
