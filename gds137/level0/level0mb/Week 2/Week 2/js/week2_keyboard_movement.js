@@ -5,14 +5,14 @@ var context;
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
-var player;
+
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	player = new GameObject();
+	paddle = new GameObject();
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -37,15 +37,15 @@ function animate()
 	if(w)
 	{
 		console.log("Moving Up");
-		player.y += -2;
+		paddle.y += -2;
 	}
 	if(s)
 	{
 		console.log("Moving Down");
-		player.y += 2;
+		paddle.y += 2;
 	}
 	
 	//Update the Screen
-	player.drawRect();
+	paddle.drawRect();
 }
 

@@ -5,7 +5,8 @@ var context;
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
-var player;
+
+var paddle;
 
 //This is used to stop the player from moving through obstacles.
 var prevX;
@@ -16,11 +17,11 @@ var prevY;
 	context = canvas.getContext("2d");	
 	
 	//Instantiate the Player
-	player = new GameObject();
-	player.x = 8;
-	player.width = 15;
-	player.height = 150;
-	player.color = "purple"
+	paddle = new GameObject();
+	paddle.x = 8;
+	paddle.width = 15;
+	paddle.height = 150;
+	paddle.color = "purple"
 	
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
@@ -59,12 +60,12 @@ function animate()
 	if(w)
 	{
 		//console.log("Moving Right");
-		player.y += -2;
+		paddle.y += -2;
 	}
 	if(s)
 	{
 		//console.log("Moving Right");
-		player.y += 2;
+		paddle.y += 2;
 	}
 	
 	
@@ -96,24 +97,24 @@ function animate()
 	//{
 	//	console.log("colliding");
 	//}
-	if(Ball.hitTestObject(player)) //top
+	if(Ball.hitTestObject(paddle)) //top
 	{
-		if(Ball.y < player.y - player.height/3)
+		if(Ball.y < paddle.y - paddle.height/3)
 		{
 			Ball.vx = -10;
 			Ball.vy = -10;
 		}
 	}
-	if(Ball.hitTestObject(player)) //middle
+	if(Ball.hitTestObject(paddle)) //middle
 	{
-		if(Ball.y > player.y - player.height/3 && Ball.y < player.y - player.height - 50)
+		if(Ball.y > paddle.y - paddle.height/3 && Ball.y < paddle.y - paddle.height - 50)
 		{
 			Ball.vx = -Ball.vx
 		}
 	}
-	if(Ball.hitTestObject(player)) //bottom
+	if(Ball.hitTestObject(paddle)) //bottom
 	{
-		if(Ball.y > player.y - player.height/3 && Ball.y > player.y - player.height - 50)
+		if(Ball.y > paddle.y - paddle.height/3 && Ball.y > paddle.y - paddle.height - 50)
 		{
 			Ball.vx = -10;
 			Ball.vy = 10;
@@ -122,25 +123,25 @@ function animate()
 
 	
 	//Impede movement
-	if(rBlock2.hitTestObject(player))
+	if(rBlock2.hitTestObject(paddle))
 	{
-		player.y = prevY;
+		paddle.y = prevY;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = player.y;
+		prevY = paddle.y;
 	}
-	if(rBlock3.hitTestObject(player))
+	if(rBlock3.hitTestObject(paddle))
 	{
-		player.y = prevY;
+		paddle.y = prevY;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = player.y;
+		prevY = paddle.y;
 	}
-	if(Ball.hitTestObject(player))
+	if(Ball.hitTestObject(paddle))
 	{
 		Ball.vx = -Ball.vx;
 		Ball < 50 - Ball.width/2;
@@ -152,7 +153,7 @@ function animate()
 	}
 	
 	//Update the Screen
-	player.drawRect();
+	paddle.drawRect();
 	//lBlock1.drawCircle();
 	//lBlock2.drawCircle();
 	//rBlock1.drawRect();

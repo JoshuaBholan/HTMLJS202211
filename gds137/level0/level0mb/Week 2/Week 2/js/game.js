@@ -9,6 +9,7 @@ var Ball;
 
 
 
+
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 	Ball = new GameObject();
