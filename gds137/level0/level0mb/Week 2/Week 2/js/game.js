@@ -34,12 +34,12 @@ function animate()
 	//---------------------------------------------------
 	
 	//--------------Bounce of Right----------------------
-	if(Ball.x > canvas.width - Ball.width/2)
-	{
-		Ball.vx = -Ball.vx;	
-		Ball.x = canvas.width - Ball.width/2;
-		Ball.color ='black'
-	}
+	//if(Ball.x > canvas.width - Ball.width/2)
+	//{
+		//Ball.vx = -Ball.vx;	
+		//Ball.x = canvas.width - Ball.width/2;
+		//Ball.color ='black'
+	//}
 	//left bounce
 	//if(Ball.x < 50)
 	//{

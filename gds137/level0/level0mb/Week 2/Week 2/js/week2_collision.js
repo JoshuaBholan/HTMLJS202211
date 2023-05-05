@@ -7,6 +7,7 @@ var timer;
 var interval = 1000/60;
 var player;
 var paddle;
+var paddle2;
 
 //This is used to stop the player from moving through obstacles.
 var prevX;
@@ -23,6 +24,11 @@ var prevyy;
 	paddle.width = 15;
 	paddle.height = 150;
 	paddle.color = "purple"
+	paddle2 = new GameObject();
+	paddle2.x = 1020;
+	paddle2.width = 15;
+	paddle2.height = 150;
+	paddle2.color = "black"
 	
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
@@ -122,6 +128,29 @@ function animate()
 			Ball.vy = 10;
 		}
 	}
+	if(Ball.hitTestObject(paddle2)) //top for paddle2
+	{
+		if(Ball.y < paddle2.y - paddle2.height/3)
+		{
+			Ball.vx = 10;
+			Ball.vy = -10;
+		}
+	}
+	if(Ball.hitTestObject(paddle2)) //middle for paddle 2
+	{
+		if(Ball.y < paddle2.y - paddle2.height/3+50)
+		{
+			Ball.vx = -Ball.vx
+		}
+	}
+	if(Ball.hitTestObject(paddle2)) //bottom for paddle 2
+	{
+		if(Ball.y > paddle2.y - paddle2.height/3 + 100)
+		{
+			Ball.vx = -10;
+			Ball.vy = 10;
+		}
+	}
 
 	
 	//Impede movement
@@ -150,6 +179,11 @@ function animate()
 		Ball.vx = -Ball.vx;
 		Ball < 50 - Ball.width/2;
 	}
+	if(Ball.hitTestObject(paddle2))
+	{
+		Ball.vx = -Ball.vx;
+		Ball < 50 - Ball.width/2;
+	}
 	if(Ball.x < 0)
 	{
 		Ball.x = 550;
@@ -158,6 +192,7 @@ function animate()
 	
 	//Update the Screen
 	paddle.drawRect();
+	paddle2.drawRect();
 	//lBlock1.drawCircle();
 	//lBlock2.drawCircle();
 	//rBlock1.drawRect();

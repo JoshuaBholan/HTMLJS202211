@@ -45,6 +45,18 @@ function animate()
 		console.log("Moving Down");
 		paddle.y += 2;
 	}
+	if(up)
+	{
+		console.log("Moving Up")
+		paddle2.y += -2;
+	}
+	if(down)
+	{
+		console.log("Moving Down")
+		{
+			paddle2.y += 2;
+		}
+	}
 	
 	//Update the Screen
 	paddle.drawRect();
