@@ -19,7 +19,7 @@ var p2Wins = 0;
 	
 	//------Declare the Player's speed on the x and y axis------
 	Ball.vx = 10;
-	Ball.vy = 0;
+	Ball.vy = 10;
 	//----------------------------------------------------
 	
 	timer = setInterval(animate, interval);
@@ -29,6 +29,16 @@ var p2Wins = 0;
 function animate()
 {
 	context.clearRect(0,0,canvas.width, canvas.height);	
+	context.save();
+	context.strokeStyle = "yellow";
+	context.beginPath();
+	context.moveTo(501,0);
+	context.lineTo(501,1000);
+	context.closePath();
+	context.lineWidth = 5;
+	context.stroke();
+	context.restore();
+	
 	
 	
 	//----Movement Using the Player's move() function----
@@ -64,17 +74,21 @@ function animate()
 		Ball.y < Ball.height -canvas.height;
 		Ball.color = 'red'
 	}
-	if(Ball.x > canvas.width - Ball.width/2)
+	if(Ball.x > 1200)
 	{
-		p1Wins + 1;
-		consolelog("p1 wins")
+		p1Wins ++;
+		console.log("p1 wins")
 	}
-	if(Ball.x < 50)
+	if(Ball.x < -180)
 	{
-		p2Wins + 1;
-		consolelog("p2 wins")
+		p2Wins ++;
+		console.log("p2 wins")
 	}
-	
+	context.fillText("Player 1 | Player 2",460,25,500);
+	context.fillText(p1Wins,474,50,500);
+	context.fillText(" - ",495,50,500);
+	context.fillText(p2Wins,516,50,500);
+	 
 
 	//---------------------------------------------------
 	

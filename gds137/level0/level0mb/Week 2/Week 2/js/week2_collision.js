@@ -75,6 +75,16 @@ function animate()
 		//console.log("Moving Right");
 		paddle.y += 2;
 	}
+	if(up)
+	{
+		//console.log("Moving Right");
+		paddle2.y += -2;
+	}
+	if(down)
+	{
+		//console.log("Moving Right");
+		paddle2.y += 2;
+	}
 	
 	
 	
@@ -132,7 +142,7 @@ function animate()
 	{
 		if(Ball.y < paddle2.y - paddle2.height/3)
 		{
-			Ball.vx = 10;
+			Ball.vx = -10;
 			Ball.vy = -10;
 		}
 	}
@@ -147,7 +157,7 @@ function animate()
 	{
 		if(Ball.y > paddle2.y - paddle2.height/3 + 100)
 		{
-			Ball.vx = -10;
+			Ball.vx = 10;
 			Ball.vy = 10;
 		}
 	}
@@ -184,11 +194,17 @@ function animate()
 		Ball.vx = -Ball.vx;
 		Ball < 50 - Ball.width/2;
 	}
-	if(Ball.x < 0)
+	if(Ball.x < -180)
 	{
-		Ball.x = 550;
-		Ball.y = 480;
+		Ball.x = 500;
+		Ball.y = 490;
 	}
+	if(Ball.x > 1200)
+	{
+		Ball.x = 500;
+		Ball.y = 490;
+	}
+	
 	
 	//Update the Screen
 	paddle.drawRect();
