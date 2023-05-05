@@ -14,6 +14,7 @@ var paddle;
 	
 	//Instantiate the Player
 	paddle = new GameObject();
+	paddle2 = new GameObject();
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);

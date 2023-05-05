@@ -66,7 +66,7 @@ function release(e)
 	}
 	if(e.keyCode == 38)
 	{
-		up == false;
+		up = false;
 	}
 	if(e.keyCode == 40)
 	{
