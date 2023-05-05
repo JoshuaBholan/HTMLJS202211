@@ -111,11 +111,12 @@ function animate()
 			Ball.vx = -Ball.vx
 		}
 	}
-	if(Ball.hitTestObject(player)) //middle
+	if(Ball.hitTestObject(player)) //bottom
 	{
-		if(Ball.y > player.y - player.height/3 && Ball.y < player.y - player.height - 50)
+		if(Ball.y > player.y - player.height/3 && Ball.y > player.y - player.height - 50)
 		{
-			Ball.vx = -Ball.vx
+			Ball.vx = -10;
+			Ball.vy = 10;
 		}
 	}
 
