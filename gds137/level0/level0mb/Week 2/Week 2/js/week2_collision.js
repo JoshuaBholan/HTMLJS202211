@@ -96,14 +96,29 @@ function animate()
 	//{
 	//	console.log("colliding");
 	//}
-	if(Ball.hitTestObject(player))
+	if(Ball.hitTestObject(player)) //top
 	{
-		if(Ball.y < player.y - player.height/6)
+		if(Ball.y < player.y - player.height/3)
 		{
 			Ball.vx = -10;
 			Ball.vy = -10;
 		}
 	}
+	if(Ball.hitTestObject(player)) //middle
+	{
+		if(Ball.y > player.y - player.height/3 && Ball.y < player.y - player.height - 50)
+		{
+			Ball.vx = -Ball.vx
+		}
+	}
+	if(Ball.hitTestObject(player)) //middle
+	{
+		if(Ball.y > player.y - player.height/3 && Ball.y < player.y - player.height - 50)
+		{
+			Ball.vx = -Ball.vx
+		}
+	}
+
 	
 	//Impede movement
 	if(rBlock2.hitTestObject(player))
