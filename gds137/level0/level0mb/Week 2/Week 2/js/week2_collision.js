@@ -101,20 +101,20 @@ function animate()
 	{
 		if(Ball.y < paddle.y - paddle.height/3)
 		{
-			Ball.vx = -10;
+			Ball.vx = 10;
 			Ball.vy = -10;
 		}
 	}
 	if(Ball.hitTestObject(paddle)) //middle
 	{
-		if(Ball.y > paddle.y - paddle.height/3 && Ball.y < paddle.y - paddle.height - 50)
+		if(Ball.y < paddle.y - paddle.height/3+50)
 		{
 			Ball.vx = -Ball.vx
 		}
 	}
 	if(Ball.hitTestObject(paddle)) //bottom
 	{
-		if(Ball.y > paddle.y - paddle.height/3 && Ball.y > paddle.y - paddle.height - 50)
+		if(Ball.y > paddle.y - paddle.height/3 + 100)
 		{
 			Ball.vx = -10;
 			Ball.vy = 10;
