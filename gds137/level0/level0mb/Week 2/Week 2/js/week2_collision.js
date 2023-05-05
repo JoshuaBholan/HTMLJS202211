@@ -46,7 +46,6 @@ function animate()
 	
 	
 	
-	
 	//Move the Player to the right
 	//if(d)
 	//{
