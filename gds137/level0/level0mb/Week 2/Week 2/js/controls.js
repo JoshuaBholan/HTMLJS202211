@@ -10,6 +10,7 @@ var down = false;
 document.addEventListener("keydown", press);
 document.addEventListener("keyup", release);
 
+
 //Event Functions
 function press(e)
 {
@@ -63,11 +64,11 @@ function release(e)
 	{
 		s = false;
 	}
-	if(e.keycode == 38)
+	if(e.keyCode == 38)
 	{
 		up == false;
 	}
-	if(e.keycode == 40)
+	if(e.keyCode == 40)
 	{
 		down = false;
 	}
