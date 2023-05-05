@@ -64,6 +64,14 @@ function animate()
 		Ball.y < Ball.height -canvas.height;
 		Ball.color = 'red'
 	}
+	if(Ball.x > canvas.width - Ball.width/2)
+	{
+		p1Wins + 1;
+	}
+	if(Ball.x < 50)
+	{
+		p2Wins + 1;
+	}
 	
 
 	//---------------------------------------------------
