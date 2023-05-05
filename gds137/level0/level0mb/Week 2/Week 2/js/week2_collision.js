@@ -25,13 +25,15 @@ var prevY;
 	
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
-	//rBlock1 = new GameObject((canvas.width-350), canvas.height/2, 100, 100, "orange");
+	rBlock1 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "orange");
 	rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
-	rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
+	//rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
 	rBlock2.x = 9;
 	rBlock2.y = -52;
-	rBlock3.x = 9;
-	rBlock3.y = 850;
+	rBlock1.x = 9;
+	rBlock1.y = 850;
+	//rBlock3.x = 9;
+	//rBlock3.y = 850;
 	
 
 	//Set the Animation Timer
@@ -132,7 +134,7 @@ function animate()
 	{
 		prevY = paddle.y;
 	}
-	if(rBlock3.hitTestObject(paddle))
+	if(rBlock1.hitTestObject(paddle))
 	{
 		paddle.y = prevY;
 		console.log("colliding");
@@ -141,6 +143,7 @@ function animate()
 	{
 		prevY = paddle.y;
 	}
+	//paddle collision
 	if(Ball.hitTestObject(paddle))
 	{
 		Ball.vx = -Ball.vx;
@@ -156,9 +159,9 @@ function animate()
 	paddle.drawRect();
 	//lBlock1.drawCircle();
 	//lBlock2.drawCircle();
-	//rBlock1.drawRect();
+	rBlock1.drawRect();
 	rBlock2.drawRect();
-	rBlock3.drawRect();
+	//rBlock3.drawRect();
 
 }
 
