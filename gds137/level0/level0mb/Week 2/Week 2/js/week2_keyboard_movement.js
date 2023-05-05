@@ -1,5 +1,5 @@
 //Declare my variables
-
+var player;
 var canvas;
 var context;
 var timer;

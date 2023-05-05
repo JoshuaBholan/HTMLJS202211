@@ -5,7 +5,7 @@ var context;
 var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
-
+var player;
 var paddle;
 
 //This is used to stop the player from moving through obstacles.
