@@ -7,10 +7,12 @@ var timer;
 var interval = 1000/60;
 var player;
 var paddle;
+var paddle2;
 
 //This is used to stop the player from moving through obstacles.
 var prevX;
 var prevY;
+var prevyy;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -22,6 +24,11 @@ var prevY;
 	paddle.width = 15;
 	paddle.height = 150;
 	paddle.color = "purple"
+	paddle2 = new GameObject();
+	paddle2.x = 1020;
+	paddle2.width = 15;
+	paddle2.height = 150;
+	paddle2.color = "black"
 	
 	//lBlock1 = new GameObject(canvas.width - 750, canvas.height/2+75, 100, 100,"#00ff00");
 	//lBlock2 = new GameObject(canvas.width - 550, canvas.height/2+75, 100, 100,"#00ff00");
@@ -64,6 +71,16 @@ function animate()
 	{
 		//console.log("Moving Right");
 		paddle.y += 2;
+	}
+	if(up)
+	{
+		//console.log("Moving Right");
+		paddle2.y += -2;
+	}
+	if(down)
+	{
+		//console.log("Moving Right");
+		paddle2.y += 2;
 	}
 	
 	
@@ -118,18 +135,42 @@ function animate()
 			Ball.vy = 10;
 		}
 	}
+	if(Ball.hitTestObject(paddle2)) //top for paddle2
+	{
+		if(Ball.y < paddle2.y - paddle2.height/3)
+		{
+			Ball.vx = -10;
+			Ball.vy = -10;
+		}
+	}
+	if(Ball.hitTestObject(paddle2)) //middle for paddle 2
+	{
+		if(Ball.y < paddle2.y - paddle2.height/3+50)
+		{
+			Ball.vx = -Ball.vx
+		}
+	}
+	if(Ball.hitTestObject(paddle2)) //bottom for paddle 2
+	{
+		if(Ball.y > paddle2.y - paddle2.height/3 + 100)
+		{
+			Ball.vx = 10;
+			Ball.vy = 10;
+		}
+	}
 
 	
 	//Impede movement
 	if(rBlock2.hitTestObject(paddle))
 	{
-		paddle.y = prevY;
+		paddle.y = prevyy+10;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = paddle.y;
+		prevyy = paddle.y;
 	}
+	//stops movement on bottom
 	if(rBlock3.hitTestObject(paddle))
 	{
 		paddle.y = prevY;
@@ -139,20 +180,41 @@ function animate()
 	{
 		prevY = paddle.y;
 	}
+	//if(rBlock1.hitTestObject(paddle))
+	//{
+		//paddle.y = prevY;
+		//console.log("colliding");
+	//}
+	//else
+	//{
+		//prevY = paddle.y;
+	//}
 	//paddle collision
 	if(Ball.hitTestObject(paddle))
 	{
 		Ball.vx = -Ball.vx;
 		Ball < 50 - Ball.width/2;
 	}
-	if(Ball.x < 0)
+	if(Ball.hitTestObject(paddle2))
 	{
-		Ball.x = 550;
-		Ball.y = 480;
+		Ball.vx = -Ball.vx;
+		Ball < 50 - Ball.width/2;
 	}
+	if(Ball.x < -180)
+	{
+		Ball.x = 500;
+		Ball.y = 490;
+	}
+	if(Ball.x > 1200)
+	{
+		Ball.x = 500;
+		Ball.y = 490;
+	}
+	
 	
 	//Update the Screen
 	paddle.drawRect();
+	paddle2.drawRect();
 	//lBlock1.drawCircle();
 	//lBlock2.drawCircle();
 	//rBlock1.drawRect();
