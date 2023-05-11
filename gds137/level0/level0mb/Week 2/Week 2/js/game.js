@@ -10,6 +10,10 @@ var player;
 var p1Wins = 0;
 var p2Wins = 0;
 var img = document.getElementById("ric");
+var someX = 0;
+var someY = 0;
+var someWidth = 50; 
+var someHeight = 50;
 
 
 
@@ -89,7 +93,7 @@ function animate()
 	context.fillText(p1Wins,474,50,500);
 	context.fillText(" - ",495,50,500);
 	context.fillText(p2Wins,516,50,500);
-	context.drawImage(img, someX, someY, someWidth, someHeight);
+	context.drawImage(img,someX, someY, someWidth, someHeight);
 	//---------------------------------------------------
 	
 	Ball.drawCircle();
