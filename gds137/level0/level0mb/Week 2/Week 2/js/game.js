@@ -9,6 +9,7 @@ var Ball;
 var player;
 var p1Wins = 0;
 var p2Wins = 0;
+var img = document.getElementById("ric");
 
 
 
