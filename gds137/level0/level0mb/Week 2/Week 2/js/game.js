@@ -10,8 +10,8 @@ var player;
 var p1Wins = 0;
 var p2Wins = 0;
 var img = document.getElementById("ric");
-var someX = 0;
-var someY = 0;
+var someX = canvas.width/2-37;
+var someY = canvas.height/2-10;
 var someWidth = 50; 
 var someHeight = 50;
 
@@ -25,6 +25,8 @@ var someHeight = 50;
 	//------Declare the Player's speed on the x and y axis------
 	Ball.vx = 10;
 	Ball.vy = 0;
+	img.vx = 10;
+	img.vy = 0;
 	
 	//----------------------------------------------------
 	timer = setInterval(animate, interval);
@@ -48,6 +50,7 @@ function animate()
 	
 	//----Movement Using the Player's move() function----
 	Ball.move();
+	img.move();
 	
 	//---------------------------------------------------
 	
