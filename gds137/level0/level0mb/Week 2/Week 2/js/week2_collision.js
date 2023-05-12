@@ -193,22 +193,22 @@ function animate()
 	//right top collosion
 	if(rBlock4.hitTestObject(paddle2))
 	{
-		paddle.y = prevyyy;
+		paddle2.y = prevyyy;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = paddle.y;
+		prevyyy = paddle2.y;
 	}
 	//right bottom collision
 	if(rBlock5.hitTestObject(paddle2))
 	{
-		paddle.y = prevyyyy;
+		paddle2.y = prevyyyy;
 		console.log("colliding");
 	}
 	else
 	{
-		prevY = paddle.y;
+		prevyyyy = paddle2.y;
 	}
 
 	//if(rBlock1.hitTestObject(paddle))
