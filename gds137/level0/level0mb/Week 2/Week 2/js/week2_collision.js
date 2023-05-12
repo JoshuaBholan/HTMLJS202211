@@ -191,7 +191,7 @@ function animate()
 		prevY = paddle.y;
 	}
 	//right top collosion
-	if(rBlock4.hitTestObject(paddle))
+	if(rBlock4.hitTestObject(paddle2))
 	{
 		paddle.y = prevyyy;
 		console.log("colliding");
@@ -201,7 +201,7 @@ function animate()
 		prevY = paddle.y;
 	}
 	//right bottom collision
-	if(rBlock5.hitTestObject(paddle))
+	if(rBlock5.hitTestObject(paddle2))
 	{
 		paddle.y = prevyyyy;
 		console.log("colliding");
