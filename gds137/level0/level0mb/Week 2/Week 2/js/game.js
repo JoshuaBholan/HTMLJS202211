@@ -24,9 +24,8 @@ var someHeight = 50;
 	
 	//------Declare the Player's speed on the x and y axis------
 	Ball.vx = 10;
-	Ball.vy = 10;
+	Ball.vy = 0;
 	//----------------------------------------------------
-	
 	timer = setInterval(animate, interval);
 
 	
