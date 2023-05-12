@@ -49,6 +49,7 @@ function animate()
 	//----Movement Using the Player's move() function----
 	Ball.move();
 	
+	
 	//---------------------------------------------------
 	
 	//--------------Bounce of Right----------------------
