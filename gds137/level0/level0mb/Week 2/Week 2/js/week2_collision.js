@@ -13,6 +13,8 @@ var paddle2;
 var prevX;
 var prevY;
 var prevyy;
+var prevyyy;
+var prevyyyy;
 
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
@@ -35,12 +37,20 @@ var prevyy;
 	//rBlock1 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "orange");
 	rBlock2 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "blue");
 	rBlock3 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
+	rBlock4 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
+	rBlock5 = new GameObject((canvas.width-50), canvas.height/2, 100, 100, "red");
 	rBlock2.x = 9;
 	rBlock2.y = -52;
 	//rBlock1.x = 9;
 	//rBlock1.y = 850;
 	rBlock3.x = 9;
 	rBlock3.y = 850;
+	rBlock4.x = 1000;
+	rBlock4.y = -52;
+	rBlock5.x = 1000;
+	rBlock5.y = 850;;
+	
+	
 	
 
 	//Set the Animation Timer
@@ -180,6 +190,27 @@ function animate()
 	{
 		prevY = paddle.y;
 	}
+	//right top collosion
+	if(rBlock4.hitTestObject(paddle))
+	{
+		paddle.y = prevyyy;
+		console.log("colliding");
+	}
+	else
+	{
+		prevY = paddle.y;
+	}
+	//right bottom collision
+	if(rBlock5.hitTestObject(paddle))
+	{
+		paddle.y = prevyyyy;
+		console.log("colliding");
+	}
+	else
+	{
+		prevY = paddle.y;
+	}
+
 	//if(rBlock1.hitTestObject(paddle))
 	//{
 		//paddle.y = prevY;
@@ -220,6 +251,8 @@ function animate()
 	//rBlock1.drawRect();
 	rBlock2.drawRect();
 	rBlock3.drawRect();
+	rBlock4.drawRect();
+	rBlock5.drawRect();
 
 }
 
