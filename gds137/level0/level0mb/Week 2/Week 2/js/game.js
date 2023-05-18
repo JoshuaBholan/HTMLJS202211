@@ -9,6 +9,32 @@ var Ball;
 var player;
 var p1Wins = 0;
 var p2Wins = 0;
+var canvas;
+var context;
+var timer;
+//1000 ms or 1 second / FPS
+var interval = 1000/60;
+var player;
+var paddle;
+var paddle2;
+
+//This is used to stop the player from moving through obstacles.
+var prevX;
+var prevY;
+var prevyy;
+var prevyyy;
+var prevyyyy;
+paddle = new GameObject();
+	paddle.x = 8;
+	paddle.width = 15;
+	paddle.height = 150;
+	paddle.color = "purple"
+	paddle2 = new GameObject();
+	paddle2.x = 1020;
+	paddle2.width = 15;
+	paddle2.height = 150;
+	paddle2.color = "black"
+
 
 
 
