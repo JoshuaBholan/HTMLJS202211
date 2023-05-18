@@ -9,8 +9,6 @@ var Ball;
 var player;
 var p1Wins = 0;
 var p2Wins = 0;
-var img = document.getElementById("ric");
-
 
 
 
@@ -21,9 +19,9 @@ var img = document.getElementById("ric");
 	
 	//------Declare the Player's speed on the x and y axis------
 	Ball.vx = 10;
-	Ball.vy = 10;
-	//----------------------------------------------------
+	Ball.vy = 0;
 	
+	//----------------------------------------------------
 	timer = setInterval(animate, interval);
 
 	
@@ -45,6 +43,8 @@ function animate()
 	
 	//----Movement Using the Player's move() function----
 	Ball.move();
+	
+	
 	//---------------------------------------------------
 	
 	//--------------Bounce of Right----------------------
@@ -90,7 +90,6 @@ function animate()
 	context.fillText(p1Wins,474,50,500);
 	context.fillText(" - ",495,50,500);
 	context.fillText(p2Wins,516,50,500);
-	//context.drawImage(img,someX,someY,someWidth,someHeight);
 	 
 
 	//---------------------------------------------------
