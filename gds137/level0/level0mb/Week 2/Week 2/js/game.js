@@ -15,8 +15,8 @@ var timer;
 //1000 ms or 1 second / FPS
 var interval = 1000/60;
 var player;
-var paddle;
-var paddle2;
+//var paddle;
+//var paddle2;
 var img = document.getElementById("ric");
 var someHeight = 50;
 var someX = 50;
@@ -29,16 +29,16 @@ var prevY;
 var prevyy;
 var prevyyy;
 var prevyyyy;
-paddle = new GameObject();
-	paddle.x = 8;
-	paddle.width = 15;
-	paddle.height = 150;
-	paddle.color = "purple"
-	paddle2 = new GameObject();
-	paddle2.x = 1020;
-	paddle2.width = 15;
-	paddle2.height = 150;
-	paddle2.color = "black"
+//paddle = new GameObject();
+	//paddle.x = 8;
+	//paddle.width = 15;
+	//paddle.height = 150;
+	//paddle.color = "purple"
+	//paddle2 = new GameObject();
+	//paddle2.x = 1020;
+	//paddle2.width = 15;
+	//paddle2.height = 150;
+	//paddle2.color = "black"
 
 
 
