@@ -270,7 +270,7 @@ function animate()
 	context.fillText(p1Wins,474,50,500);
 	context.fillText(" - ",495,50,500);
 	context.fillText(p2Wins,516,50,500);
-	context.drawImage(img,Ball.x, Ball.y, someWidth, someHeight);
+	context.drawImage(img,Ball.x-50, Ball.y-50, 100, 100);
 	
 	//---------------------------------------------------
 	
