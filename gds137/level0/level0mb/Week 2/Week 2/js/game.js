@@ -116,13 +116,8 @@ function animate()
 	context.fillText(p1Wins,474,50,500);
 	context.fillText(" - ",495,50,500);
 	context.fillText(p2Wins,516,50,500);
-<<<<<<< HEAD
 	context.drawImage(img,someX, someY, someWidth, someHeight);
 	
-=======
-	 
-
->>>>>>> 37098e27e6503c7e70201859bfaabc5d5bb40a52
 	//---------------------------------------------------
 	
 	Ball.drawCircle();
