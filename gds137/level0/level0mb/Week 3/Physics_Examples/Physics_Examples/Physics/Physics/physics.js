@@ -35,7 +35,7 @@ function animate()
 	showAcceleration();
 	showFriction();
 	showGravity();
-	//showPixelLock();
+	showPixelLock();
 	showBounce();
 	
 	player.drawCircle();
