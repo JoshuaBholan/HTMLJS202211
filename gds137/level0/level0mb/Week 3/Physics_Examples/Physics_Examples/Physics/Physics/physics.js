@@ -19,7 +19,7 @@ var gravity = 1;
 	context = canvas.getContext("2d");	
 	
 	player = new GameObject();
-	Platform = new GameObject((canvas.width-500), 730, 250, 50, "blue");
+	Platform = new GameObject((canvas.width-500), 730, 250, 40, "blue");
 	player.force = 2;
 	player.color = "magenta";
 	Platform.color = "cyan"
