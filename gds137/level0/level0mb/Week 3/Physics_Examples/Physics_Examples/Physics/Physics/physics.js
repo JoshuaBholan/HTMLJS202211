@@ -19,6 +19,7 @@ var gravity = 1;
 	
 	player = new GameObject();
 	player.force = 2;
+	player.color = "magenta";
 	
 	timer = setInterval(animate, interval);
 
