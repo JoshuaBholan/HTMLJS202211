@@ -22,7 +22,7 @@ var paddle;
 function animate()
 {
 	//Erase the Screen
-	context.clearRect(0,0,canvas.width, canvas.height);	
+	
 	
 	
 	//Move the Player to the right
