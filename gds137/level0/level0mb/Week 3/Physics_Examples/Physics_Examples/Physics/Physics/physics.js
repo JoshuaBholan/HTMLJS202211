@@ -5,6 +5,7 @@ var context;
 var timer;
 var interval = 1000/60;
 var player;
+var Platform;
 
 //---------------Set Friction and Gravity-----------------
 var frictionX = .85;	
@@ -18,6 +19,7 @@ var gravity = 1;
 	context = canvas.getContext("2d");	
 	
 	player = new GameObject();
+	platform = new GameObject();
 	player.force = 2;
 	player.color = "magenta";
 	
