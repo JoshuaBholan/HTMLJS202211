@@ -34,7 +34,7 @@ function animate()
 	showPixelLock();
 	showBounce();
 	
-	player.drawRect();
+	player.drawCircle();
 }
 
 
