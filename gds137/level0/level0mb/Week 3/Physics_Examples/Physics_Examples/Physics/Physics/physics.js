@@ -19,9 +19,10 @@ var gravity = 1;
 	context = canvas.getContext("2d");	
 	
 	player = new GameObject();
-	platform = new GameObject();
+	Platform = new GameObject((canvas.width-500), 730, 250, 50, "blue");
 	player.force = 2;
 	player.color = "magenta";
+	Platform.color = "cyan"
 	
 	timer = setInterval(animate, interval);
 
@@ -38,6 +39,7 @@ function animate()
 	showBounce();
 	
 	player.drawCircle();
+	Platform.drawRect();
 }
 
 
