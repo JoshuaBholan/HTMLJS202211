@@ -9,11 +9,32 @@ var Ball;
 var player;
 var p1Wins = 0;
 var p2Wins = 0;
-var img = document.getElementById("ric");
-var someX = canvas.width/2-37;
-var someY = canvas.height/2-10;
-var someWidth = 50; 
-var someHeight = 50;
+var canvas;
+var context;
+var timer;
+//1000 ms or 1 second / FPS
+var interval = 1000/60;
+var player;
+var paddle;
+var paddle2;
+
+//This is used to stop the player from moving through obstacles.
+var prevX;
+var prevY;
+var prevyy;
+var prevyyy;
+var prevyyyy;
+paddle = new GameObject();
+	paddle.x = 8;
+	paddle.width = 15;
+	paddle.height = 150;
+	paddle.color = "purple"
+	paddle2 = new GameObject();
+	paddle2.x = 1020;
+	paddle2.width = 15;
+	paddle2.height = 150;
+	paddle2.color = "black"
+
 
 
 
@@ -95,8 +116,13 @@ function animate()
 	context.fillText(p1Wins,474,50,500);
 	context.fillText(" - ",495,50,500);
 	context.fillText(p2Wins,516,50,500);
+<<<<<<< HEAD
 	context.drawImage(img,someX, someY, someWidth, someHeight);
 	
+=======
+	 
+
+>>>>>>> 37098e27e6503c7e70201859bfaabc5d5bb40a52
 	//---------------------------------------------------
 	
 	Ball.drawCircle();
