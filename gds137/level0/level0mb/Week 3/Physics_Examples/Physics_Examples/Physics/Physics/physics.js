@@ -42,6 +42,15 @@ function animate()
 	showBounce();
 	context.fillText("Score",60,45,50);
 	context.fillText(score,100,45,500);
+	context.save();
+	context.strokeStyle = "Black";
+	context.beginPath();
+	context.moveTo(Platform.x,Platform.y);
+	context.lineTo(player.x,player.y);
+	context.closePath();
+	context.lineWidth = 1;
+	context.stroke();
+	context.restore();
 
 	
 	player.drawCircle();
