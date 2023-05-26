@@ -239,10 +239,6 @@ function showBounce()
 		//player.vy = -player.vy * .99;
 		score = score + 1;
 	}
-	if(player.hitTestObject(Platform))
-	{
-		
-	}
 	
 	//-----------------------------------------------------------------------------------------
 }
