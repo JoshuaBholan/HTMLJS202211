@@ -51,6 +51,25 @@ function animate()
 	context.lineWidth = 1;
 	context.stroke();
 	context.restore();
+	//right bounce
+	if(player.x > canvas.width - player.width/2)
+	{
+		player.vx = -player.vx;	
+		player.x = canvas.width - player.width/2;
+	}
+	//top bounce
+	if(player.y < player.height+750 - canvas.height)
+	{
+		player.vy = -player.vy;
+		player.y < player.height -canvas.height;
+	}
+	//left bounce
+	if(player.x < 50)
+	{
+		player.vx = -player.vx;
+		player < 50 - player.width/2;
+
+	}
 
 	
 	player.drawCircle();
@@ -219,6 +238,10 @@ function showBounce()
 		player.vy = -35
 		//player.vy = -player.vy * .99;
 		score = score + 1;
+	}
+	if(player.hitTestObject(Platform))
+	{
+		
 	}
 	
 	//-----------------------------------------------------------------------------------------
