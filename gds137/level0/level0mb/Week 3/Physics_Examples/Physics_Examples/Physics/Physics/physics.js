@@ -11,6 +11,7 @@ var Platform;
 var frictionX = .85;	
 var frictionY = .97;
 var gravity = 1;
+var score = 0;
 //--------------------------------------------------------
 
 
