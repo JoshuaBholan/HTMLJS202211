@@ -212,6 +212,7 @@ function showBounce()
 		player.vy += player.ay * player.force;
 	}
 	
+	
 	player.vy *= frictionY;
 	player.vx *= frictionX;
 	
