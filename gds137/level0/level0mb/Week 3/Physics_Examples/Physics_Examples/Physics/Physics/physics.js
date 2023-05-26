@@ -191,11 +191,15 @@ function showBounce()
 	{
 		
 		//--------Bounce the Ball---------------------------------------------------------------
-		//player.y = canvas.height - player.height/2;
+		player.y = canvas.height - player.height/2;
 		//the decimal is how bouncy you want the object to be
 		//It should be a number between 0 and 2;
 		player.vy = -player.vy * .99;
 		
+	}
+	if(player.hitTestObject(Platform))
+	{
+		player.vy = -player.vy
 	}
 	
 	//-----------------------------------------------------------------------------------------
