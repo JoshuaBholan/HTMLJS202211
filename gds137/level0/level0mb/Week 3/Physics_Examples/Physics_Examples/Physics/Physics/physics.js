@@ -40,6 +40,9 @@ function animate()
 	//showGravity();
 	//showPixelLock();
 	showBounce();
+	context.fillText("Score",60,45,500);
+	context.fillText(score,100,45,500);
+
 	
 	player.drawCircle();
 	Platform.drawRect();
@@ -198,6 +201,7 @@ function showBounce()
 		//the decimal is how bouncy you want the object to be
 		//It should be a number between 0 and 2;
 		player.vy = -player.vy * .90;
+		score = 0;
 		
 	}
 	if(player.hitTestObject(Platform))
@@ -205,6 +209,7 @@ function showBounce()
 		//player.y = Platform.height - player.height/2;
 		player.vy = -35
 		//player.vy = -player.vy * .99;
+		score = score + 1;
 	}
 	
 	//-----------------------------------------------------------------------------------------
