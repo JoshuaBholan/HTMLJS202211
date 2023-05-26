@@ -235,7 +235,7 @@ function showBounce()
 	if(player.hitTestObject(Platform))
 	{
 		//player.y = Platform.height - player.height/2;
-		player.vy = -35
+		player.vy = -35;
 		//player.vy = -player.vy * .99;
 		score = score + 1;
 	}
