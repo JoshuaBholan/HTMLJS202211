@@ -196,6 +196,10 @@ function showBounce()
 		//It should be a number between 0 and 2;
 		player.vy = -player.vy * .99;
 	}
+	//if(player.y < Platform.height - player.height/2)
+	//{
+	//	player.vy = -player.vy * .99;
+	//}
 	
 	//-----------------------------------------------------------------------------------------
 }
