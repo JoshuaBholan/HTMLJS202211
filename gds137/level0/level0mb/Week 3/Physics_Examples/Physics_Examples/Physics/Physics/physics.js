@@ -23,6 +23,8 @@ var gravity = 1;
 	player.force = 2;
 	player.color = "magenta";
 	Platform.color = "cyan"
+	player.vx = 5;
+	player.vy = 0;
 	
 	timer = setInterval(animate, interval);
 
@@ -191,16 +193,17 @@ function showBounce()
 	{
 		
 		//--------Bounce the Ball---------------------------------------------------------------
-		player.y = canvas.height - player.height/2 -500;
+		player.y = canvas.height - player.height/2;
 		//the decimal is how bouncy you want the object to be
 		//It should be a number between 0 and 2;
-		player.vy = -player.vy * .99;
+		player.vy = -player.vy * .90;
 		
 	}
 	if(player.hitTestObject(Platform))
 	{
-		player.y = Platform.height - player.height/2;
-		player.vy = -player.vy * .59;
+		//player.y = Platform.height - player.height/2;
+		player.vy = -35
+		//player.vy = -player.vy * .99;
 	}
 	
 	//-----------------------------------------------------------------------------------------
