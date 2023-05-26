@@ -40,7 +40,7 @@ function animate()
 	//showGravity();
 	//showPixelLock();
 	showBounce();
-	context.fillText("Score",60,45,500);
+	context.fillText("Score",60,45,50);
 	context.fillText(score,100,45,500);
 
 	
