@@ -12,6 +12,8 @@ var frictionX = .85;
 var frictionY = .97;
 var gravity = 1;
 var score = 0;
+var prevX;
+var prevXX;
 //--------------------------------------------------------
 
 
@@ -21,6 +23,8 @@ var score = 0;
 	
 	player = new GameObject();
 	Platform = new GameObject((canvas.width-500), 730, 250, 40, "blue");
+	boundary1 = new GameObject(-108,700,200,200,"blue");
+	boundary2 = new GameObject(1130,700,200,200,"blue");
 	player.force = 6;
 	player.color = "magenta";
 	Platform.color = "cyan"
@@ -53,11 +57,11 @@ function animate()
 	context.restore();
 	if (a)
 	{
-		Platform.x += -5;
+		Platform.x += -8;
 	}
 	if(d)
 	{
-		Platform.x +=5;
+		Platform.x +=8;
 	}
 	//right bounce
 	if(player.x > canvas.width - player.width/2)
@@ -86,8 +90,8 @@ function animate()
 	
 	player.x += player.vx;
 	player.y += player.vy;
-	player.vx *= frictionX;	
-	player.vy *= frictionY;
+	//player.vx *= frictionX;	
+	//player.vy *= frictionY;
 	//player.vy += gravity;
 	//player.y += player.vy;
 	
@@ -119,6 +123,7 @@ function animate()
 		//It should be a number between 0 and 2;
 		player.vy = -player.vy * 1.2;
 		score = 0;
+
 		
 	}
 	if(player.hitTestObject(Platform))
@@ -169,12 +174,28 @@ function animate()
 			player.vx = player.force*5;
 		}
 	}
+	if(boundary1.hitTestObject(Platform))
+	{
+		Platform.x = prevX;
+	}
+	else{
+		prevX = Platform.x;
+	}
+	if(boundary2.hitTestObject(Platform))
+	{
+		Platform.x = prevXX;
+	}
+	else{
+		prevXX = Platform.x;
+	}
 	
 	
 
 	
 	player.drawCircle();
 	Platform.drawRect();
+	boundary1.drawRect();
+	boundary2.drawRect();
 	
 }
 
