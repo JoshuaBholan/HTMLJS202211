@@ -48,7 +48,7 @@ var prevyyyy;
 	rBlock4.x = 1000;
 	rBlock4.y = -52;
 	rBlock5.x = 1000;
-	rBlock5.y = 850;;
+	rBlock5.y = 850;
 	
 	
 	
