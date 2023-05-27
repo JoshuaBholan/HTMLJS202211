@@ -39,7 +39,7 @@ function animate()
 	//showFriction();
 	//showGravity();
 	//showPixelLock();
-	showBounce();
+	//showBounce();
 	context.fillText("Score",60,45,50);
 	context.fillText(score,100,45,500);
 	context.save();
@@ -51,6 +51,14 @@ function animate()
 	context.lineWidth = 1;
 	context.stroke();
 	context.restore();
+	if (a)
+	{
+		Platform.x += -5;
+	}
+	if(d)
+	{
+		Platform.x +=5;
+	}
 	//right bounce
 	if(player.x > canvas.width - player.width/2)
 	{
@@ -70,10 +78,39 @@ function animate()
 		player < 50 - player.width/2;
 
 	}
+	
+	player.vy *= frictionY;
+	player.vx *= frictionX;
+	
+	player.vy += gravity;
+	
+	player.x += player.vx;
+	player.y += player.vy;
+	
+	//--------------------Check Collision------------------------------------------------------
+	if(player.y > canvas.height - player.height/2)
+	{
+		
+		//--------Bounce the Ball---------------------------------------------------------------
+		player.y = canvas.height - player.height/2;
+		//the decimal is how bouncy you want the object to be
+		//It should be a number between 0 and 2;
+		player.vy = -player.vy * .90;
+		score = 0;
+		
+	}
+	if(player.hitTestObject(Platform))
+	{
+		//player.y = Platform.height - player.height/2;
+		player.vy = -35;
+		//player.vy = -player.vy * .99;
+		score = score + 1;
+	}
 
 	
 	player.drawCircle();
 	Platform.drawRect();
+	
 }
 
 
@@ -240,8 +277,10 @@ function showBounce()
 		//player.vy = -player.vy * .99;
 		score = score + 1;
 	}
+
 	
 	//-----------------------------------------------------------------------------------------
 }
+
 
 
