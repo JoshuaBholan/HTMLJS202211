@@ -8,7 +8,7 @@ var player;
 var Platform;
 
 //---------------Set Friction and Gravity-----------------
-var frictionX = .85;	
+var frictionX = .95;	
 var frictionY = .97;
 var gravity = 1;
 var score = 0;
@@ -28,7 +28,7 @@ var prevXX;
 	player.force = 6;
 	player.color = "magenta";
 	Platform.color = "cyan"
-	player.vx = 10;
+	player.vx = 5;
 	player.vy = 0;
 	
 	timer = setInterval(animate, interval);
