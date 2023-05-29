@@ -94,7 +94,10 @@ function animate()
 		context.textAlign = "center";
 		context.drawText("You Win!!!", canvas.width/2, canvas.height/2);
 	}
-	
+	if (s)
+	{
+		player.vy = -5;
+	}
 	
 	platform0.drawRect();
 
