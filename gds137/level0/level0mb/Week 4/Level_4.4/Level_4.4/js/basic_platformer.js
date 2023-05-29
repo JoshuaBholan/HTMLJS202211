@@ -94,17 +94,23 @@ function animate()
 	//---------Add to the following condition so that when you hold "s" you climb down through the platform. 
 	
 	
-
+	if (s)
+	{
+		while(platform1.hitTestPoint(player.bottom()) && player.vy >=0 )
+	{
+		player.canJump = true;
+		player.y++;
+		player.vy = 0;
+	}
+	}
 	while(platform1.hitTestPoint(player.bottom()) && player.vy >=0 )
 	{
 		player.canJump = true;
 		player.y--;
 		player.vy = 0;
 	}
-	if (s)
-	{
-		player.y = 500;
-	}
+	
+	
 
 	
 
