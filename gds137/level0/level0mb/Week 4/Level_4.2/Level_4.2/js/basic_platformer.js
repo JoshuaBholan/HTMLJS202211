@@ -5,6 +5,9 @@ var context;
 var timer;
 var interval;
 var player;
+var doubleJump = 0;
+
+
 
 
 	canvas = document.getElementById("canvas");
@@ -34,6 +37,7 @@ var player;
 	
 	var gravity = 1;
 
+
 	interval = 1000/60;
 	timer = setInterval(animate, interval);
 
@@ -42,11 +46,25 @@ function animate()
 	
 	context.clearRect(0,0,canvas.width, canvas.height);	
 
-	if(w && player.canJump && player.vy ==0)
+	if(w && player.canJump && player.vy >=0)
 	{
-		player.canJump = false;
+		player.canJump = true;
 		player.vy += player.jumpHeight;
+		doubleJump++;
+		if(doubleJump > 1)
+		{
+			player.canJump = false;
+		}
 	}
+	if(player.vy ==0)
+	{
+		doubleJump = 0;
+	}
+	
+	
+	
+
+	
 
 	if(a)
 	{
