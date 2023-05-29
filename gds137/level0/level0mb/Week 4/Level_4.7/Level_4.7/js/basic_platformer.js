@@ -115,32 +115,31 @@ function animate()
 		player.x--;
 		player.vx = 0;
 	}
-	while(platform1.hitTestPoint(player.top()) && player.vy <=0)
-	{
-		player.y++;
-		player.vy = 0;
-	}
-	while(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
-	{
-		player.y--;
-		player.vy = 0;
-		player.canJump = true;
-	}
-	while(platform1.hitTestPoint(player.left()) && player.vx <=0)
-	{
-		player.x++;
-		player.vx = 0;
-	}
+	//while(platform1.hitTestPoint(player.top()) && player.vy <=0)
+	//{
+		//player.y++;
+		//player.vy = 0;
+	//}
+	//while(platform1.hitTestPoint(player.bottom()) && player.vy >=0)
+	//{
+		//player.y--;
+		//player.vy = 0;
+		//player.canJump = true;
+	//}
+	//while(platform1.hitTestPoint(player.left()) && player.vx <=0)
+	//{
+		//player.x++;
+		//player.vx = 0;
+	//}
 	while(platform1.hitTestPoint(player.right()) && player.vx >=0)
 	{
-		player.x--;
-		player.vx = 0;
+		platform1.x = 2000;
 	}
-	while(platform1.hitTestPoint(player.right()) && player.vx >=0)
-	{
-		player.x--;
-		player.vx = 0;
-	}
+	//while(platform1.hitTestPoint(player.right()) && player.vx >=0)
+//	{
+	//	player.x--;
+		//player.vx = 0;
+	//}
 	
 	//---------Objective: Let Me Out!---------------------------------------------------------------------------------------------------- 
 	//---------Run this program first.
