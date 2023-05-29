@@ -101,10 +101,11 @@ function animate()
 		player.y--;
 		player.vy = 0;
 	}
-	if(s)
+	if (s)
 	{
-		player.vy = 2;
+		player.y = 500;
 	}
+
 	
 
 
