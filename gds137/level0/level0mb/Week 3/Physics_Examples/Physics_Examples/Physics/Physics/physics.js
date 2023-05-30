@@ -136,6 +136,10 @@ function animate()
 		//player.vy = -35;
 		//player.vy = -player.vy * .99;
 		//score = score + 1;
+
+		// 1/6 of of far left paddle that sends ball far left, 
+		//checks by seeing if the ball is within that 1/6 by if ball < 1/6 of the platforms width
+		//Platform.width/6 = 1/6 of paddle
 		if(player.x < Platform.x - Platform.width/6)
 		{
 			player.vy = -35;
@@ -143,32 +147,44 @@ function animate()
 		}
 
 	}
+//the 1/6 slightly left of middle of the paddle. 
+//to find this, I took the width of the paddle (250) and divded by 6 to figure out what exactlty 1/6 of the paddle was which was (41.66)
+// Then made an if statement saying if the ball was less than 1/6 + 41.66 (or 2/6) the paddle width And Greater than 1/6 the paddle width
+// This elimates the far left 1/6 of paddle and gives us the 1/6 of the paddle we need
+//Platform.width/6+41.66 = 2/6 of paddle
 	if(player.hitTestObject(Platform))
 	{
-		if(player.x < Platform.x - Platform.width/6+41 && player.x > Platform.x - Platform.width/6)
+		if(player.x < Platform.x - Platform.width/6+41.66 && player.x > Platform.x - Platform.width/6)
 		{
 			player.vy = -35;
 			player.vx = -player.force;
 		}
 	}
+	//center 1/3 of paddle
+	//since its 1/3 instead of 1/6 we need 2/6 of the padddle
+	//we repeat the pattern, saying if ball is > 2/6 of the paddle but less than 4/6 instead of 3/6. 
+	//Platform.width/6+124.98 = 4/6 of paddle
 	if(player.hitTestObject(Platform))
 	{
-		if(player.x < Platform.x - Platform.width/6+80 && player.x > Platform.x - Platform.width/6+41)
+		if(player.x < Platform.x - Platform.width/6+124.98 && player.x > Platform.x - Platform.width/6+41.66)
 		{
 			player.vy = -35;
 		}
 	}
+	//repeat the process but now back to adding 1/6
+	// Platform.width/6+166.64 = 5/6 of paddle
 	if(player.hitTestObject(Platform))
 	{
-		if(player.x < Platform.x - Platform.width/6+140 && player.x > Platform.x - Platform.width/6+80)
+		if(player.x < Platform.x - Platform.width/6+166.64 && player.x > Platform.x - Platform.width/6+124.98)
 		{
 			player.vy = -35;
 			player.vx = player.force;
 		}
 	}
+	//Platform.width/6+208.3 = 6/6 of paddle 
 	if(player.hitTestObject(Platform))
 	{
-		if(player.x < Platform.x - Platform.width/6+215 && player.x > Platform.x - Platform.width/6+140)
+		if(player.x < Platform.x - Platform.width/6+208.3 && player.x > Platform.x - Platform.width/6+166.64)
 		{
 			player.vy = -35;
 			player.vx = player.force*5;
