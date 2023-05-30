@@ -181,7 +181,7 @@ function animate()
 			player.vx = player.force;
 		}
 	}
-	//Platform.width/6+208.3 = 6/6 of paddle 
+	//Platform.width/6+208.3 = 6/6 of paddle
 	if(player.hitTestObject(Platform))
 	{
 		if(player.x < Platform.x - Platform.width/6+208.3 && player.x > Platform.x - Platform.width/6+166.64)
