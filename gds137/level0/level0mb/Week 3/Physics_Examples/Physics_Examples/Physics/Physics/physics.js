@@ -30,7 +30,6 @@ var prevXX;
 	Platform.color = "cyan"
 	player.vx = 5;
 	player.vy = 0;
-	
 	timer = setInterval(animate, interval);
 
 
@@ -44,8 +43,9 @@ function animate()
 	//showGravity();
 	//showPixelLock();
 	//showBounce();
-	context.fillText("Score",60,45,50,);
-	context.fillText(score,100,45,50);
+	context.font = "18px Arial";
+	context.fillText("Score",60,45,50);
+	context.fillText(score,120,45,50);
 	context.strokeStyle = "Black";
 	context.beginPath();
 	context.moveTo(Platform.x,Platform.y);
