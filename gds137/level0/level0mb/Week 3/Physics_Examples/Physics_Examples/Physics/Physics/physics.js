@@ -44,9 +44,8 @@ function animate()
 	//showGravity();
 	//showPixelLock();
 	//showBounce();
-	context.fillText("Score",60,45,50);
-	context.fillText(score,100,45,500);
-	context.save();
+	context.fillText("Score",60,45,50,);
+	context.fillText(score,100,45,50);
 	context.strokeStyle = "Black";
 	context.beginPath();
 	context.moveTo(Platform.x,Platform.y);
@@ -144,6 +143,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = -player.force*5;
+			console.log("1/6")
 		}
 
 	}
@@ -158,6 +158,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = -player.force;
+			console.log("2/6")
 		}
 	}
 	//center 1/3 of paddle
@@ -169,6 +170,7 @@ function animate()
 		if(player.x < Platform.x - Platform.width/6+124.98 && player.x > Platform.x - Platform.width/6+41.66)
 		{
 			player.vy = -35;
+			console.log("1/3")
 		}
 	}
 	//repeat the process but now back to adding 1/6
@@ -179,6 +181,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = player.force;
+			console.log("5/6")
 		}
 	}
 	//Platform.width/6+208.3 = 6/6 of paddle
@@ -188,6 +191,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = player.force*5;
+			console.log("6/6")
 		}
 	}
 	if(boundary1.hitTestObject(Platform))
