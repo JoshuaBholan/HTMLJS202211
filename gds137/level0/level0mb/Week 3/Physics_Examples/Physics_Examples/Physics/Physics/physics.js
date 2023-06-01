@@ -55,23 +55,23 @@ function animate()
 	context.stroke();
 	context.restore();
 	//speed of paddle
-	//if (a)
-	//{
-		//Platform.x += -2;
-	//}
-	//if(d)
-	//{
-		//Platform.x +=2;
-	//}
-	//if(d)//acceleration
-	//{	
-		//Platform.vx +=  Platform.ax * Platform.force;
-	//}
-	//if(a)
-	//{
-		//Platform.vx += Platform.ax * -Platform.force;
-	//}
-	//Platform.x += Platform.vx;
+	if (a)
+	{
+		Platform.x += -2;
+	}
+	if(d)
+	{
+		Platform.x +=2;
+	}
+	if(d)//acceleration
+	{	
+		Platform.vx +=  Platform.ax * Platform.force;
+	}
+	if(a)
+	{
+		Platform.vx += Platform.ax * -Platform.force;
+	}
+	Platform.x += Platform.vx;
 	//friction
 	if(d)
 	{	
