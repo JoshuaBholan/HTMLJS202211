@@ -13,7 +13,7 @@ var player;
 	player = new GameObject({x:300, y:canvas.height/2-100});
 
 	platform0 = new GameObject();
-		platform0.width = canvas.width-300;
+		platform0.width = canvas.width;
 		platform0.x = platform0.width/2;
 		platform0.color = "#66ff33";
 		
@@ -25,14 +25,23 @@ var player;
 		
 	platform2 = new GameObject();
 		platform2.width = canvas.width-300;
-		platform2.x = platform0.width/2;
+		platform2.x = platform0.width/2-100;
 		platform2.color = "#66ff33";
-		platform2.y = platform0.y- 200;
+		platform2.y = platform0.y- 250;
 		platform2.color = "#66ff33";
+	platform3 = new GameObject();
+	platform3.color = "#66ff33";
+	platform3.y = platform0.y- platform0.height/2 - platform1.height/2 - 100;
+	platform3.x = 950;
+	platform3.height = 400;
+
+
+	
+		
 
 		
 	
-	goal = new GameObject({width:24, height:50, x:700, y:platform0.y-100, color:"#00ffff"});
+	goal = new GameObject({width:24, height:50, x:100, y:platform0.y-330, color:"#00ffff"});
 	
 
 	var fX = .85;
@@ -48,7 +57,7 @@ function animate()
 	
 	context.clearRect(0,0,canvas.width, canvas.height);	
 
-	if(w && player.canJump && player.vy ==0)
+	if(w && player.canJump && player.vy >=0)
 	{
 		player.canJump = false;
 		player.vy += player.jumpHeight;
@@ -88,6 +97,19 @@ function animate()
 	{
 		player.x--;
 		player.vx = 0;
+	}
+	while(platform3.hitTestPoint(player.right()) && player.vx >=0)
+	{
+		player.x--;
+		player.vx = 0;
+		if(player.vy >=0)
+		{
+			if(w)
+			{
+				player.canJump = true;
+			}
+			
+		}
 	}
 	while(platform0.hitTestPoint(player.top()) && player.vy <=0)
 	{
@@ -165,7 +187,8 @@ function animate()
 	
 	platform0.drawRect();
 	platform2.drawRect();
-	platform1.drawRect();
+	//platform1.drawRect();
+	platform3.drawRect();
 	player.drawRect();
 	
 	//Show hit points
