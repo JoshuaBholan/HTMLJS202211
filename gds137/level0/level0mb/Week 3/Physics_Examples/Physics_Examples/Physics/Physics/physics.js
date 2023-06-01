@@ -54,14 +54,36 @@ function animate()
 	context.lineWidth = 1;
 	context.stroke();
 	context.restore();
+	//speed of paddle
 	if (a)
 	{
-		Platform.x += -8;
+		Platform.x += -2;
 	}
 	if(d)
 	{
-		Platform.x +=8;
+		Platform.x +=2;
 	}
+	if(d)//acceleration
+	{	
+		Platform.vx +=  Platform.ax * Platform.force;
+	}
+	if(a)
+	{
+		Platform.vx += Platform.ax * -Platform.force;
+	}
+	Platform.x += Platform.vx;
+	//friction
+	if(d)
+	{	
+		Platform.vx += Platform.ax * Platform.force;
+	}
+	if(a)
+	{
+		Platform.vx += Platform.ax * -Platform.force;
+	}
+	Platform.vx *= frictionX;
+	Platform.x += Platform.vx;
+
 	//right bounce
 	if(player.x > canvas.width - player.width/2)
 	{
