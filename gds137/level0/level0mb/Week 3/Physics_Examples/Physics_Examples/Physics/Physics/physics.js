@@ -165,7 +165,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = -player.force*5;
-			console.log("1/6")
+			console.log("1/6-far Left")
 		}
 
 	}
@@ -180,7 +180,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = -player.force;
-			console.log("2/6")
+			console.log("2/6 - a little left")
 		}
 	}
 	//center 1/3 of paddle
@@ -192,7 +192,7 @@ function animate()
 		if(player.x < Platform.x - Platform.width/6+124.98 && player.x > Platform.x - Platform.width/6+41.66)
 		{
 			player.vy = -35;
-			console.log("1/3")
+			console.log("1/3 - center")
 		}
 	}
 	//repeat the process but now back to adding 1/6
@@ -203,7 +203,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = player.force;
-			console.log("5/6")
+			console.log("5/6 - a little right")
 		}
 	}
 	//Platform.width/6+208.3 = 6/6 of paddle
@@ -213,7 +213,7 @@ function animate()
 		{
 			player.vy = -35;
 			player.vx = player.force*5;
-			console.log("6/6")
+			console.log("6/6 - far right")
 		}
 	}
 	if(boundary1.hitTestObject(Platform))
